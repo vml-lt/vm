@@ -102,6 +102,12 @@
       --max-w:       1080px;
     }
 
+    html, body {
+      height: 100%;
+      overflow: hidden; /* только .page-wrap скроллится */
+      margin: 0; padding: 0;
+    }
+
     html { font-size: 16px; }
 
     body {
@@ -109,10 +115,17 @@
       color: var(--clr-text);
       background: var(--clr-bg);
       line-height: 1.7;
-      padding-top: 60px; /* отступ под фиксированный хедер */
     }
 
-    .page-wrap { display: contents; } /* прозрачная обёртка, не влияет на layout */
+    /* Единственный scroll-контейнер — хедер sticky работает внутри него */
+    .page-wrap {
+      height: 100%;
+      overflow-y: auto;
+      /* Скрываем полосу прокрутки визуально */
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+    }
+    .page-wrap::-webkit-scrollbar { display: none; }
 
     a { color: var(--clr-brand); text-decoration: none; }
     a:hover { text-decoration: underline; }
@@ -124,8 +137,7 @@
 
     section { padding: 68px 0; }
     section:nth-child(even) { background: #edf2f9; }
-    /* Отступ сверху при скролле к секции — компенсация фиксированного хедера */
-    section[id] { scroll-margin-top: 64px; }
+
 
     h1 { font-size: clamp(1.8rem, 4vw, 2.6rem); font-weight: 800; line-height: 1.2; }
     h2 { font-size: clamp(1.4rem, 3vw, 2rem); font-weight: 700; margin-bottom: 24px; color: var(--clr-brand2); }
@@ -136,7 +148,7 @@
 
     /* ========== HEADER / NAV ========== */
     header {
-      position: fixed; top: 0; left: 0; right: 0; z-index: 999;
+      position: sticky; top: 0; z-index: 999;
       background: var(--clr-brand);
       box-shadow: 0 2px 12px rgba(0,0,0,.18);
     }
@@ -979,11 +991,16 @@
 
     // ── Smooth scroll (iframe-safe, абсолютное смещение) ─────────────
     function navTo(id) {
-      var el = document.getElementById(id);
-      if (!el) return;
-      // scrollIntoView пробрасывается через iframe в Google Sites (Chromium IPC)
-      // scroll-margin-top: 64px на секции компенсирует высоту фиксированного хедера
-      el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      var el   = document.getElementById(id);
+      var wrap = document.querySelector('.page-wrap');
+      if (!el || !wrap) return;
+      var hdrH = 64; // высота хедера
+      // Абсолютная позиция элемента внутри .page-wrap:
+      // offsetTop по цепочке offsetParent (работает для любой глубины DOM)
+      var abs = 0;
+      var node = el;
+      while (node && node !== wrap) { abs += node.offsetTop; node = node.offsetParent; }
+      wrap.scrollTo({ top: abs - hdrH, behavior: 'smooth' });
       // Закрыть бургер
       var navEl2   = document.getElementById('main-nav');
       var burgerEl = document.getElementById('burger');
