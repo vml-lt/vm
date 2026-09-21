@@ -932,7 +932,7 @@
           <div class="contact-card">
             <div class="c-icon">📧</div>
             <h3>El. paštas</h3>
-            <p><a href="/cdn-cgi/l/email-protection#573e39313817213a3e393621793b23"><span class="__cf_email__" data-cfemail="11787f777e51677c787f70673f7d65">[email&#160;protected]</span></a></p>
+            <p><span class="email-reveal" data-u="info" data-d="vminav.lt"></span></p>
           </div>
 
           <div class="contact-card">
@@ -945,7 +945,7 @@
 
         <div style="margin-top:36px; background:rgba(255,255,255,.07); border-radius:10px; padding:24px; border:1px solid rgba(255,255,255,.12);">
           <h3 style="color:var(--clr-accent);">📝 Atsiųskite užklausą</h3>
-          <p style="color:rgba(255,255,255,.78); font-size:.92rem; margin-top:8px;">Jei norite gauti individualią konsultaciją – atsiųskite el. laišką su klausimo aprašymu į <a href="/cdn-cgi/l/email-protection#026b6c646d42746f6b6c63742c6e76" style="color:var(--clr-accent);"><span class="__cf_email__" data-cfemail="c8a1a6aea788bea5a1a6a9bee6a4bc">[email&#160;protected]</span></a>. Atsakome per 1–2 darbo dienas.</p>
+          <p style="color:rgba(255,255,255,.78); font-size:.92rem; margin-top:8px;">Jei norite gauti individualią konsultaciją – atsiųskite el. laišką su klausimo aprašymu į <span class="email-reveal" data-u="info" data-d="vminav.lt" data-color="var(--clr-accent)"></span>. Atsakome per 1–2 darbo dienas.</p>
         </div>
 
         <p style="color:rgba(255,255,255,.45); font-size:.8rem; margin-top:28px;">
@@ -977,7 +977,7 @@
 
 </div><!-- /.page-wrap -->
 
-  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+  <script>
     // Metai footer
     document.getElementById('yr').textContent = new Date().getFullYear();
 
@@ -998,6 +998,16 @@
       if (navEl) { navEl.classList.remove('open'); }
       if (burgerEl) { burgerEl.setAttribute('aria-expanded', 'false'); }
     }
+
+    // Собираем email из частей — обходим обфускацию Netlify/Cloudflare
+    document.querySelectorAll('.email-reveal').forEach(function(el) {
+      var email = el.dataset.u + '\u0040' + el.dataset.d;
+      var a = document.createElement('a');
+      a.href = 'mai' + 'lto:' + email;
+      a.textContent = email;
+      if (el.dataset.color) { a.style.color = el.dataset.color; }
+      el.parentNode.replaceChild(a, el);
+    });
 
     // Burger menu
     var burger = document.getElementById('burger');
