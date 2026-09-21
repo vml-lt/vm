@@ -102,7 +102,10 @@
       --max-w:       1080px;
     }
 
-    html, body { height: 100%; }
+    html, body {
+      height: 100%;
+      overflow: hidden; /* запрещаем body создавать свой скроллбар */
+    }
 
     html { font-size: 16px; }
 
@@ -118,6 +121,12 @@
       height: 100%;
       overflow-y: auto;
       scroll-behavior: smooth;
+      /* Скрываем скроллбар визуально — прокрутка остаётся рабочей */
+      scrollbar-width: none;        /* Firefox */
+      -ms-overflow-style: none;     /* IE / старый Edge */
+    }
+    .page-wrap::-webkit-scrollbar {
+      display: none;                /* Chrome, Safari, Opera */
     }
 
     a { color: var(--clr-brand); text-decoration: none; }
