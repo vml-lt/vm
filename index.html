@@ -102,11 +102,6 @@
       --max-w:       1080px;
     }
 
-    html, body {
-      height: 100%;
-      overflow: hidden; /* запрещаем body создавать свой скроллбар */
-    }
-
     html { font-size: 16px; }
 
     body {
@@ -114,20 +109,10 @@
       color: var(--clr-text);
       background: var(--clr-bg);
       line-height: 1.7;
+      padding-top: 60px; /* отступ под фиксированный хедер */
     }
 
-    /* ── Iframe scroll wrapper: makes sticky header work inside Google Sites embed ── */
-    .page-wrap {
-      height: 100%;
-      overflow-y: auto;
-      scroll-behavior: smooth;
-      /* Скрываем скроллбар визуально — прокрутка остаётся рабочей */
-      scrollbar-width: none;        /* Firefox */
-      -ms-overflow-style: none;     /* IE / старый Edge */
-    }
-    .page-wrap::-webkit-scrollbar {
-      display: none;                /* Chrome, Safari, Opera */
-    }
+    .page-wrap { display: contents; } /* прозрачная обёртка, не влияет на layout */
 
     a { color: var(--clr-brand); text-decoration: none; }
     a:hover { text-decoration: underline; }
@@ -139,6 +124,8 @@
 
     section { padding: 68px 0; }
     section:nth-child(even) { background: #edf2f9; }
+    /* Отступ сверху при скролле к секции — компенсация фиксированного хедера */
+    section[id] { scroll-margin-top: 64px; }
 
     h1 { font-size: clamp(1.8rem, 4vw, 2.6rem); font-weight: 800; line-height: 1.2; }
     h2 { font-size: clamp(1.4rem, 3vw, 2rem); font-weight: 700; margin-bottom: 24px; color: var(--clr-brand2); }
@@ -149,7 +136,7 @@
 
     /* ========== HEADER / NAV ========== */
     header {
-      position: sticky; top: 0; z-index: 999;
+      position: fixed; top: 0; left: 0; right: 0; z-index: 999;
       background: var(--clr-brand);
       box-shadow: 0 2px 12px rgba(0,0,0,.18);
     }
@@ -994,20 +981,9 @@
     function navTo(id) {
       var el = document.getElementById(id);
       if (!el) return;
-      var wrap = document.querySelector('.page-wrap');
-      var hdr  = document.querySelector('header');
-      var hdrH = hdr ? hdr.offsetHeight : 60;
-      // Позиция элемента внутри scroll-контейнера .page-wrap:
-      // getBoundingClientRect даёт viewport-relative координаты,
-      // разность + scrollTop = абсолютная позиция внутри контейнера
-      var elTop   = el.getBoundingClientRect().top;
-      var wrapTop = wrap ? wrap.getBoundingClientRect().top : 0;
-      var target  = (wrap ? wrap.scrollTop : 0) + (elTop - wrapTop) - hdrH;
-      if (wrap) {
-        wrap.scrollTo({ top: target, behavior: 'smooth' });
-      } else {
-        window.scrollTo({ top: target, behavior: 'smooth' });
-      }
+      // scrollIntoView пробрасывается через iframe в Google Sites (Chromium IPC)
+      // scroll-margin-top: 64px на секции компенсирует высоту фиксированного хедера
+      el.scrollIntoView({ behavior: 'smooth', block: 'start' });
       // Закрыть бургер
       var navEl2   = document.getElementById('main-nav');
       var burgerEl = document.getElementById('burger');
