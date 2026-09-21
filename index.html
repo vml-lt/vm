@@ -985,17 +985,24 @@
     function navTo(id) {
       var el = document.getElementById(id);
       if (!el) return;
-      var hdr = document.querySelector('header');
+      var wrap = document.querySelector('.page-wrap');
+      var hdr  = document.querySelector('header');
       var hdrH = hdr ? hdr.offsetHeight : 60;
-      // Абсолютный offsetTop — суммируем по цепочке offsetParent
-      var absTop = 0;
-      var node = el;
-      while (node) { absTop += node.offsetTop; node = node.offsetParent; }
-      window.scrollTo({ top: absTop - hdrH, behavior: 'smooth' });
+      // Позиция элемента внутри scroll-контейнера .page-wrap:
+      // getBoundingClientRect даёт viewport-relative координаты,
+      // разность + scrollTop = абсолютная позиция внутри контейнера
+      var elTop   = el.getBoundingClientRect().top;
+      var wrapTop = wrap ? wrap.getBoundingClientRect().top : 0;
+      var target  = (wrap ? wrap.scrollTop : 0) + (elTop - wrapTop) - hdrH;
+      if (wrap) {
+        wrap.scrollTo({ top: target, behavior: 'smooth' });
+      } else {
+        window.scrollTo({ top: target, behavior: 'smooth' });
+      }
       // Закрыть бургер
-      var navEl = document.getElementById('main-nav');
+      var navEl2   = document.getElementById('main-nav');
       var burgerEl = document.getElementById('burger');
-      if (navEl) { navEl.classList.remove('open'); }
+      if (navEl2)   { navEl2.classList.remove('open'); }
       if (burgerEl) { burgerEl.setAttribute('aria-expanded', 'false'); }
     }
 
