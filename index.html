@@ -1,656 +1,1030 @@
-<!doctype html>
-<html amp lang="lt">
+<!DOCTYPE html>
+<html lang="lt">
 <head>
-<meta charset="utf-8">
-<script async src="https://cdn.ampproject.org/v0.js"></script>
-<script async custom-element="amp-sidebar" src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"></script>
-<script async custom-element="amp-accordion" src="https://cdn.ampproject.org/v0/amp-accordion-0.1.js"></script>
-<title>VMI</title>
-<link rel="canonical" href="https://vml-lt.github.io/vm/">
-<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
-<meta name="description" content="VMI Kompasas &ndash; nepriklausomas informacinis portalas apie Valstybinę mokesčių inspekciją. GPM, PVM, EDS, deklaravimas ir grąžinimas &ndash; aiškiai ir naudingai.">
-<meta name="robots" content="index,follow">
-<meta property="og:title" content="VMI">
-<meta property="og:description" content="Visa informacija apie VMI ir Lietuvos mokesčių sistemą &ndash; aiškiai, tiksliai ir naudingai.">
-<meta property="og:type" content="website">
-<style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
-<style amp-custom>
-:root{--g1:#014d2a;--g2:#1a7a45;--g3:#27ae60;--g4:#52c97a;--g5:#b7e4c7;--bg:#f8faf9;--bg2:#f0f9f4;--white:#fff;--text:#1a2e1a;--muted:#556b55;--light:#8aa88a;--shadow:0 2px 20px rgba(1,77,42,0.09);--radius:14px}
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{background:#014d2a}
-body{font-family:"Segoe UI",Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.7;font-size:16px}
-a{text-decoration:none}
-nav{background:var(--white);border-bottom:2px solid var(--g5);position:sticky;top:0;z-index:100;box-shadow:0 2px 16px rgba(1,77,42,0.08)}
-.nav-inner{max-width:960px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:0 24px;height:64px}
-.nav-logo{display:flex;align-items:center;gap:10px;color:var(--g1);text-decoration:none}
-.nav-logo-icon{width:38px;height:38px;background:linear-gradient(135deg,var(--g1),var(--g3));border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
-.nav-logo-name{font-size:1.18rem;font-weight:800;letter-spacing:-0.4px}
-.nav-links{display:flex;align-items:center;gap:6px;list-style:none}
-.nav-links a{display:block;padding:8px 14px;border-radius:8px;font-size:0.9rem;font-weight:600;color:var(--g1)}
-.nav-links a:hover{background:var(--g3);color:white}
-.nav-burger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:6px;border:none;background:none}
-.nav-burger span{display:block;width:24px;height:2.5px;background:var(--g1);border-radius:2px}
-amp-sidebar{background:white;width:270px}
-.sb-header{display:flex;align-items:center;justify-content:space-between;padding:18px 20px;border-bottom:1px solid var(--g5)}
-.sb-logo{font-weight:800;font-size:1rem;color:var(--g1)}
-.sb-close{background:none;border:none;font-size:1.4rem;cursor:pointer;color:var(--g1);padding:4px 10px;border-radius:6px}
-.sb-links{display:flex;flex-direction:column;padding:14px 16px;gap:4px}
-.sb-links a{display:block;padding:11px 14px;border-radius:8px;font-weight:600;color:var(--g1);font-size:0.95rem}
-.sb-links a:hover{background:var(--bg2)}
-section{scroll-margin-top:70px}
-.wrap{max-width:960px;margin:0 auto;padding:64px 24px}
-.wrap-sm{max-width:960px;margin:0 auto;padding:48px 24px}
-.section-alt{background:var(--bg2)}
-.sec-label{font-size:0.78rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--g3);margin-bottom:8px}
-.sec-title{font-size:1.75rem;font-weight:800;color:var(--g1);margin-bottom:10px;line-height:1.25}
-.sec-sub{font-size:1rem;color:var(--muted);max-width:600px;margin-bottom:36px}
-.divider{width:52px;height:4px;background:linear-gradient(90deg,var(--g3),var(--g4));border-radius:2px;margin-bottom:24px}
-.hero{background:linear-gradient(135deg,var(--g1) 0%,var(--g2) 55%,var(--g3) 100%);color:white;overflow:hidden;position:relative}
-.hero-inner{max-width:960px;margin:0 auto;padding:72px 24px 56px;position:relative;z-index:2;display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
-.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.25);border-radius:24px;padding:6px 16px;font-size:0.8rem;font-weight:600;margin-bottom:20px}
-.hero h1{font-size:2.6rem;font-weight:900;line-height:1.15;margin-bottom:16px;letter-spacing:-0.5px}
-.hero-em{color:var(--g4)}
-.hero-sub{font-size:1.05rem;opacity:0.88;margin-bottom:32px;line-height:1.65}
-.hero-btns{display:flex;gap:14px;flex-wrap:wrap}
-.btn-primary{display:inline-block;padding:13px 28px;background:white;color:var(--g1);border-radius:10px;font-weight:700;font-size:0.95rem;box-shadow:0 4px 16px rgba(0,0,0,0.15)}
-.btn-outline{display:inline-block;padding:13px 28px;border:2px solid rgba(255,255,255,0.5);color:white;border-radius:10px;font-weight:700;font-size:0.95rem}
-.hero-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:8px}
-.hstat{background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.18);border-radius:12px;padding:16px;text-align:center}
-.hstat-num{font-size:1.7rem;font-weight:900}
-.hstat-lbl{font-size:0.75rem;opacity:0.82;margin-top:3px;line-height:1.3}
-.trust-bar{background:white;border-bottom:1px solid #e8f4ee;padding:20px 24px}
-.trust-inner{max-width:960px;margin:0 auto;display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:24px}
-.trust-item{display:flex;align-items:center;gap:8px;font-size:0.85rem;font-weight:600;color:var(--muted)}
-.trust-dot{color:var(--g3)}
-.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-.card{background:white;border-radius:var(--radius);padding:24px;box-shadow:var(--shadow);border-top:4px solid var(--g3)}
-.card:nth-child(2){border-top-color:var(--g4)}
-.card:nth-child(3n){border-top-color:var(--g2)}
-.card-icon{font-size:2rem;margin-bottom:12px}
-.card-title{font-size:1rem;font-weight:700;color:var(--g1);margin-bottom:8px}
-.card-body{font-size:0.88rem;color:var(--muted);line-height:1.65}
-.infoblock{background:linear-gradient(135deg,var(--g1) 0%,var(--g2) 100%);border-radius:20px;padding:48px 40px;color:white}
-.infoblock-title{font-size:1.45rem;font-weight:800;margin-bottom:10px}
-.infoblock-sub{opacity:0.82;margin-bottom:24px;font-size:0.97rem}
-.infoblock-list{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:28px}
-.infoblock-item{display:flex;align-items:flex-start;gap:10px;font-size:0.9rem;opacity:0.92}
-.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;position:relative}
-.step{text-align:center;position:relative;z-index:1}
-.step-circle{width:56px;height:56px;background:linear-gradient(135deg,var(--g1),var(--g3));border-radius:50%;display:flex;align-items:center;justify-content:center;color:white;font-weight:900;font-size:1.25rem;margin:0 auto 12px;box-shadow:0 4px 16px rgba(1,77,42,0.3)}
-.step-title{font-size:0.92rem;font-weight:700;color:var(--g1);margin-bottom:6px}
-.step-body{font-size:0.82rem;color:var(--muted);line-height:1.55}
-.eds-cta{margin-top:36px;background:white;border-radius:var(--radius);padding:28px 30px;box-shadow:var(--shadow);display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:20px}
-.eds-cta-title{font-weight:700;color:var(--g1);font-size:1.05rem;margin-bottom:6px}
-.eds-cta-sub{font-size:0.88rem;color:var(--muted)}
-.eds-btn{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,var(--g1),var(--g3));color:white;padding:13px 26px;border-radius:10px;font-weight:700;font-size:0.92rem}
-.tax-table{width:100%;border-collapse:collapse;font-size:0.88rem}
-.tax-table th{background:var(--g1);color:white;padding:12px 14px;text-align:left;font-size:0.82rem;font-weight:700;letter-spacing:0.3px}
-.tax-table td{padding:12px 14px;border-bottom:1px solid #e8f4ee;vertical-align:top}
-.tax-table tr:nth-child(even) td{background:#f8fff9}
-.tax-abbr{font-weight:900;color:var(--g1);font-size:1rem;white-space:nowrap}
-.tax-note{font-size:0.78rem;color:#8aa88a;display:block;margin-top:3px}
-.tag{display:inline-block;padding:3px 10px;border-radius:20px;font-size:0.75rem;font-weight:700}
-.tag-green{background:var(--g5);color:var(--g1)}
-.tag-blue{background:#dde8ff;color:#1a3a6e}
-amp-accordion section{border:1px solid #e0ede7;border-radius:10px;margin-bottom:8px;overflow:hidden}
-amp-accordion h3{cursor:pointer;padding:18px 22px;font-weight:700;font-size:0.97rem;color:var(--g1);background:white;display:flex;align-items:center;justify-content:space-between;margin:0}
-amp-accordion section[expanded] h3{background:var(--bg2);color:var(--g2)}
-.faq-arrow{display:inline-block;width:22px;height:22px;background:var(--g5);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:transform 0.25s}
-amp-accordion section[expanded] .faq-arrow{transform:rotate(180deg);background:var(--g3)}
-.faq-a{padding:16px 22px 20px;font-size:0.9rem;color:var(--muted);line-height:1.7;background:white;border-top:1px solid #e8f4ee}
-.faq-a a{color:var(--g3)}
-.tips{display:grid;grid-template-columns:1fr 1fr;gap:20px}
-.tip{display:flex;align-items:flex-start;gap:14px;background:white;border-radius:var(--radius);padding:22px;box-shadow:var(--shadow)}
-.tip-icon{font-size:1.8rem;flex-shrink:0}
-.tip-title{font-size:0.95rem;font-weight:700;color:var(--g1);margin-bottom:5px}
-.tip-body{font-size:0.85rem;color:var(--muted);line-height:1.6}
-.about-grid{display:grid;grid-template-columns:1fr auto;gap:40px;align-items:center}
-.about-p{font-size:0.95rem;color:var(--muted);margin-bottom:16px;line-height:1.75}
-.about-p strong{color:var(--g1)}
-.about-link{color:var(--g3);font-weight:600}
-.about-img-box{background:linear-gradient(135deg,var(--g1),var(--g3));border-radius:20px;padding:28px;display:flex;align-items:center;justify-content:center}
-.values{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:4px}
-.value-item{background:var(--bg2);border-radius:8px;padding:10px 14px;font-size:0.85rem;font-weight:600;color:var(--g1)}
-.prose h3{font-size:1rem;font-weight:700;color:var(--g1);margin:22px 0 8px}
-.prose p{font-size:0.9rem;color:var(--muted);margin-bottom:12px;line-height:1.75}
-.prose ul{padding-left:20px;margin-bottom:12px}
-.prose li{font-size:0.9rem;color:var(--muted);margin-bottom:5px;line-height:1.6}
-.prose a{color:var(--g3)}
-.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px}
-.contact-box{background:white;border-radius:var(--radius);padding:32px;box-shadow:var(--shadow)}
-.contact-box h3{font-size:1.1rem;font-weight:800;color:var(--g1);margin-bottom:20px;padding-bottom:12px;border-bottom:2px solid var(--g5)}
-.contact-item{display:flex;align-items:flex-start;gap:14px;margin-bottom:16px}
-.c-icon{font-size:1.3rem;flex-shrink:0;margin-top:2px}
-.c-label{font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:0.8px;color:var(--light);margin-bottom:2px}
-.c-value{font-size:0.92rem;color:var(--text);font-weight:500;line-height:1.5}
-.c-value a{color:var(--g2)}
-.contact-note{margin-top:8px;padding:14px 16px;background:var(--bg2);border-radius:10px;font-size:0.83rem;color:var(--muted);line-height:1.6}
-.contact-note strong{color:var(--g1)}
-.contact-note a{color:var(--g3)}
-.map-box{background:white;border-radius:var(--radius);box-shadow:var(--shadow);overflow:hidden}
-.map-placeholder{min-height:280px;display:flex;flex-direction:column;align-items:center;justify-content:center;background:var(--bg2);padding:32px;text-align:center}
-.map-pin{font-size:2.5rem;margin-bottom:10px}
-.map-name{font-size:1rem;font-weight:700;color:var(--g1)}
-.map-addr{font-size:0.88rem;color:var(--muted);margin-top:6px;line-height:1.6}
-.map-btn{display:inline-block;margin-top:14px;padding:10px 22px;background:var(--g3);color:white;border-radius:8px;font-size:0.85rem;font-weight:700}
-footer{background:var(--g1);color:rgba(255,255,255,0.75)}
-.footer-inner{max-width:960px;margin:0 auto;padding:48px 24px 28px;display:grid;grid-template-columns:2fr 1fr 1fr;gap:36px}
-.footer-logo-wrap{display:flex;align-items:center;gap:10px;margin-bottom:10px}
-.footer-logo-icon{width:34px;height:34px;background:rgba(255,255,255,0.15);border-radius:8px;display:flex;align-items:center;justify-content:center}
-.footer-logo-name{font-weight:800;color:white;font-size:1.05rem}
-.footer-brand p{font-size:0.85rem;line-height:1.6;opacity:0.75;max-width:280px}
-.footer-col h4{font-size:0.82rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--g4);margin-bottom:14px}
-.footer-col a{display:block;font-size:0.85rem;color:rgba(255,255,255,0.7);margin-bottom:8px}
-.footer-col a:hover{color:var(--g4)}
-.footer-bottom{max-width:960px;margin:0 auto;padding:16px 24px;border-top:1px solid rgba(255,255,255,0.1);display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;font-size:0.78rem;opacity:0.6}
-.footer-bottom a{color:rgba(255,255,255,0.6)}
-@media(max-width:768px){
-  .nav-links{display:none}
-  .nav-burger{display:flex}
-  .hero-inner{grid-template-columns:1fr;gap:24px;padding:48px 20px 36px}
-  .hero h1{font-size:1.9rem}
-  .cards{grid-template-columns:1fr}
-  .steps{grid-template-columns:1fr 1fr;gap:20px}
-  .tips{grid-template-columns:1fr}
-  .about-grid{grid-template-columns:1fr}
-  .about-img-box{display:none}
-  .contact-grid{grid-template-columns:1fr}
-  .footer-inner{grid-template-columns:1fr 1fr}
-  .footer-brand{grid-column:1/-1}
-  .infoblock{padding:32px 24px}
-  .infoblock-list{grid-template-columns:1fr}
-  .values{grid-template-columns:1fr}
-}
-@media(max-width:480px){
-  .hero h1{font-size:1.6rem}
-  .hero-stats{grid-template-columns:1fr 1fr}
-  .hstat:last-child{display:none}
-  .steps{grid-template-columns:1fr}
-  .footer-inner{grid-template-columns:1fr;gap:20px}
-  .tax-table th:nth-child(4),.tax-table td:nth-child(4){display:none}
-}
-</style>
-</head></head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+  <title>VMINAV – Mokesčių konsultacijos ir informacija Lietuvoje | VMINAV UAB</title>
+  <meta name="description" content="VMINAV UAB – nepriklausomas mokesčių informacijos portalas. Sužinokite, kaip užpildyti deklaraciją, kas yra PVM, kaip registruotis individualiai veiklai ir kokie deklaravimo terminai Lietuvoje." />
+  <meta name="keywords" content="VMI, mokesčiai, deklaracija, PVM, individuali veikla, GPM, mokesčių konsultacijos, Lietuva, VMINAV" />
+  <meta name="author" content="VMINAV UAB" />
+  <meta name="robots" content="index, follow" />
+  <!-- Open Graph -->
+  <meta property="og:title" content="VMINAV – Mokesčių konsultacijos ir informacija Lietuvoje" />
+  <meta property="og:description" content="Nepriklausomas mokesčių informacijos ir konsultacijų portalas. Deklaracijos, PVM, individuali veikla, terminai." />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="lt_LT" />
+
+  <!-- Schema.org: Organization + FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "ProfessionalService",
+        "name": "VMINAV UAB",
+        "legalName": "VMINAV UAB",
+        "identifier": "301843857",
+        "vatID": "LT100004363416",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Justiniškių g. 59-2",
+          "postalCode": "LT-05100",
+          "addressLocality": "Vilnius",
+          "addressCountry": "LT"
+        },
+        "telephone": "+37065082090",
+        "email": "info@vminav.lt",
+        "description": "Nepriklausomas mokesčių informacijos ir konsultacijų portalas fiziniams ir juridiniams asmenims Lietuvoje.",
+        "inLanguage": "lt",
+        "serviceType": ["Mokesčių konsultacijos", "Buhalterinė informacija", "PVM konsultacijos"],
+        "areaServed": { "@type": "Country", "name": "Lietuva" },
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "telephone": "+37065082090",
+          "email": "info@vminav.lt",
+          "contactType": "customer support",
+          "availableLanguage": ["Lithuanian", "Russian", "English"]
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Kas yra PVM Lietuvoje?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "PVM (Pridėtinės vertės mokestis) – tai netiesioginis mokestis, taikomas prekių ir paslaugų pirkimui-pardavimui. Standartinis PVM tarifas Lietuvoje yra 21%."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Kada reikia pateikti metinę pajamų deklaraciją?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Metinė gyventojų pajamų mokesčio (GPM) deklaracija paprastai teikiama iki gegužės 1 d. už praėjusius metus per EDS sistemą adresu deklaravimas.vmi.lt."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Kaip registruotis individualiai veiklai?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Individualią veiklą galima registruoti internetu per Mano VMI portalą arba tiesiogiai VMI teritoriniame skyriuje, pateikiant prašymą dėl individualios veiklos pažymos išdavimo."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    /* ========== RESET & BASE ========== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --clr-brand:   #1a5ca8;
+      --clr-brand2:  #0e3f7a;
+      --clr-accent:  #f5a623;
+      --clr-bg:      #f7f9fc;
+      --clr-surface: #ffffff;
+      --clr-text:    #1e2d3d;
+      --clr-muted:   #5a6a7d;
+      --clr-border:  #d8e2ef;
+      --clr-warn:    #fff4e0;
+      --clr-warn-brd:#e6b800;
+      --radius:      10px;
+      --shadow:      0 4px 18px rgba(26,92,168,.10);
+      --font:        'Segoe UI', Arial, sans-serif;
+      --max-w:       1080px;
+    }
+
+    html, body { height: 100%; }
+
+    html { font-size: 16px; }
+
+    body {
+      font-family: var(--font);
+      color: var(--clr-text);
+      background: var(--clr-bg);
+      line-height: 1.7;
+    }
+
+    /* ── Iframe scroll wrapper: makes sticky header work inside Google Sites embed ── */
+    .page-wrap {
+      height: 100%;
+      overflow-y: auto;
+      scroll-behavior: smooth;
+    }
+
+    a { color: var(--clr-brand); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    img { max-width: 100%; display: block; }
+
+    /* ========== LAYOUT ========== */
+    .container { max-width: var(--max-w); margin: 0 auto; padding: 0 20px; }
+
+    section { padding: 68px 0; }
+    section:nth-child(even) { background: #edf2f9; }
+
+    h1 { font-size: clamp(1.8rem, 4vw, 2.6rem); font-weight: 800; line-height: 1.2; }
+    h2 { font-size: clamp(1.4rem, 3vw, 2rem); font-weight: 700; margin-bottom: 24px; color: var(--clr-brand2); }
+    h3 { font-size: 1.2rem; font-weight: 700; margin-bottom: 10px; color: var(--clr-brand); }
+    p  { margin-bottom: 14px; }
+    ul, ol { padding-left: 22px; margin-bottom: 14px; }
+    li { margin-bottom: 6px; }
+
+    /* ========== HEADER / NAV ========== */
+    header {
+      position: sticky; top: 0; z-index: 999;
+      background: var(--clr-brand);
+      box-shadow: 0 2px 12px rgba(0,0,0,.18);
+    }
+
+    .nav-inner {
+      display: flex; align-items: center; justify-content: space-between;
+      max-width: var(--max-w); margin: 0 auto; padding: 0 20px; height: 60px;
+    }
+
+    .logo {
+      font-size: 1.45rem; font-weight: 900; color: #fff;
+      letter-spacing: -.5px;
+    }
+    .logo span { color: var(--clr-accent); }
+
+    nav ul {
+      list-style: none; padding: 0; margin: 0;
+      display: flex; gap: 4px; flex-wrap: wrap;
+    }
+    nav a, nav span[role="button"] {
+      color: rgba(255,255,255,.88);
+      font-size: .88rem; font-weight: 500;
+      padding: 6px 10px; border-radius: 6px;
+      transition: background .2s, color .2s;
+      white-space: nowrap;
+      cursor: pointer;
+      user-select: none;
+    }
+    nav a:hover, nav span[role="button"]:hover { background: rgba(255,255,255,.18); color: #fff; text-decoration: none; }
+    nav span[role="button"]:focus-visible { outline: 2px solid var(--clr-accent); outline-offset: 2px; }
+
+    /* burger – всегда справа через margin-left: auto */
+    .burger {
+      display: none; flex-direction: column; gap: 5px;
+      cursor: pointer; background: none; border: none; padding: 6px;
+      margin-left: auto; /* прижимает к правому краю */
+      order: 2; /* после лого, перед nav */
+    }
+    .burger span { display: block; width: 24px; height: 2px; background: #fff; border-radius: 2px; transition: .3s; }
+
+    /* ========== HERO ========== */
+    #pradzia {
+      background: linear-gradient(135deg, var(--clr-brand2) 0%, var(--clr-brand) 60%, #2978d1 100%);
+      color: #fff; padding: 90px 0 80px;
+    }
+    #pradzia h1 { color: #fff; margin-bottom: 18px; }
+    #pradzia p  { color: rgba(255,255,255,.88); font-size: 1.08rem; max-width: 640px; }
+    .hero-badge {
+      display: inline-block; background: var(--clr-accent);
+      color: #fff; font-size: .78rem; font-weight: 700;
+      padding: 4px 12px; border-radius: 20px; margin-bottom: 18px;
+      letter-spacing: .4px;
+    }
+    .hero-cta {
+      margin-top: 30px; display: flex; gap: 14px; flex-wrap: wrap;
+    }
+    .btn {
+      display: inline-block; padding: 12px 28px; border-radius: 8px;
+      font-weight: 700; font-size: .95rem; cursor: pointer; transition: .2s;
+    }
+    .btn-primary { background: var(--clr-accent); color: #fff; }
+    .btn-primary:hover { background: #d9900a; text-decoration: none; }
+    .btn-outline { border: 2px solid rgba(255,255,255,.6); color: #fff; }
+    .btn-outline:hover { background: rgba(255,255,255,.12); text-decoration: none; }
+
+    /* ========== DISCLAIMER BANNER ========== */
+    .disclaimer-banner {
+      background: var(--clr-warn); border-left: 5px solid var(--clr-warn-brd);
+      border-radius: 0 var(--radius) var(--radius) 0;
+      padding: 14px 20px; margin-bottom: 36px; font-size: .9rem;
+    }
+    .disclaimer-banner strong { color: #7a5800; }
+
+    /* ========== CARDS GRID ========== */
+    .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 22px; margin-top: 32px; }
+
+    .card {
+      background: var(--clr-surface);
+      border-radius: var(--radius); padding: 26px;
+      box-shadow: var(--shadow); border-top: 4px solid var(--clr-brand);
+      transition: transform .2s, box-shadow .2s;
+    }
+    .card:hover { transform: translateY(-4px); box-shadow: 0 10px 28px rgba(26,92,168,.15); }
+    .card-icon { font-size: 2rem; margin-bottom: 12px; }
+    .card h3 { margin-bottom: 8px; }
+    .card p { font-size: .9rem; color: var(--clr-muted); margin-bottom: 0; }
+    .card a.card-link {
+      display: inline-block; margin-top: 14px; font-size: .88rem; font-weight: 600;
+    }
+
+    /* ========== ARTICLE SECTIONS ========== */
+    .article-block { background: var(--clr-surface); border-radius: var(--radius); padding: 36px; box-shadow: var(--shadow); margin-bottom: 28px; }
+    .article-block h2 { border-left: 5px solid var(--clr-brand); padding-left: 16px; margin-bottom: 20px; }
+
+    /* steps */
+    .steps { counter-reset: step; list-style: none; padding: 0; margin: 18px 0; }
+    .steps li {
+      position: relative; padding: 14px 14px 14px 60px;
+      background: var(--clr-bg); border-radius: 8px; margin-bottom: 12px;
+      counter-increment: step;
+    }
+    .steps li::before {
+      content: counter(step);
+      position: absolute; left: 14px; top: 50%; transform: translateY(-50%);
+      width: 34px; height: 34px; background: var(--clr-brand); color: #fff;
+      border-radius: 50%; display: flex; align-items: center; justify-content: center;
+      font-weight: 800; font-size: .95rem;
+    }
+
+    /* table */
+    .tbl-wrap { overflow-x: auto; margin-top: 20px; }
+    table { width: 100%; border-collapse: collapse; font-size: .93rem; }
+    thead tr { background: var(--clr-brand); color: #fff; }
+    th, td { padding: 12px 16px; text-align: left; border-bottom: 1px solid var(--clr-border); }
+    tbody tr:nth-child(even) { background: #edf2f9; }
+    tbody tr:hover { background: #dce8f7; }
+    td strong { color: var(--clr-brand2); }
+
+    /* info box */
+    .info-box {
+      background: #e8f0fd; border-left: 4px solid var(--clr-brand);
+      border-radius: 0 8px 8px 0; padding: 14px 18px; margin: 20px 0; font-size: .92rem;
+    }
+    .info-box .icon { margin-right: 6px; }
+
+    /* ========== FAQ ========== */
+    .faq-list { list-style: none; padding: 0; margin-top: 16px; }
+    .faq-list li {
+      background: var(--clr-surface); border: 1px solid var(--clr-border);
+      border-radius: 8px; margin-bottom: 10px; overflow: hidden;
+    }
+    .faq-q {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 16px 20px; cursor: pointer; font-weight: 600; font-size: .97rem;
+    }
+    .faq-q:hover { background: #f0f5ff; }
+    .faq-a { padding: 0 20px 16px; font-size: .93rem; color: var(--clr-muted); display: none; }
+    .faq-item.open .faq-a { display: block; }
+    .faq-item.open .faq-arrow { transform: rotate(180deg); }
+    .faq-arrow { transition: transform .25s; font-size: 1rem; }
+
+    /* ========== CONTACTS ========== */
+    #kontaktai { background: var(--clr-brand2); color: #fff; }
+    #kontaktai h2 { color: #fff; border-left-color: var(--clr-accent); }
+
+    .contacts-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 24px; margin-top: 28px; }
+    .contact-card {
+      background: rgba(255,255,255,.10); border-radius: var(--radius);
+      padding: 24px; border: 1px solid rgba(255,255,255,.15);
+    }
+    .contact-card .c-icon { font-size: 1.8rem; margin-bottom: 10px; }
+    .contact-card h3 { color: var(--clr-accent); font-size: 1rem; margin-bottom: 6px; }
+    .contact-card p, .contact-card a { color: rgba(255,255,255,.88); font-size: .93rem; }
+    .contact-card a:hover { color: #fff; }
+
+    /* ========== ABOUT ========== */
+    .about-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start; }
+    .check-list { list-style: none; padding: 0; }
+    .check-list li { padding-left: 28px; position: relative; margin-bottom: 10px; }
+    .check-list li::before { content: "✔"; position: absolute; left: 0; color: var(--clr-brand); font-weight: 700; }
+
+    /* ========== FOOTER ========== */
+    footer {
+      background: #0d2a4a; color: rgba(255,255,255,.65);
+      padding: 32px 0; font-size: .85rem; text-align: center;
+    }
+    footer a { color: rgba(255,255,255,.75); }
+    footer a:hover { color: #fff; }
+    footer span[role="button"] {
+      color: rgba(255,255,255,.75); cursor: pointer;
+      text-decoration: underline; user-select: none;
+    }
+    footer span[role="button"]:hover { color: #fff; }
+    footer .footer-disclaimer {
+      max-width: 720px; margin: 0 auto 16px;
+      font-size: .8rem; line-height: 1.6; color: rgba(255,255,255,.5);
+      border-top: 1px solid rgba(255,255,255,.1); padding-top: 18px; margin-top: 18px;
+    }
+
+    /* ========== RESPONSIVE ========== */
+
+    /* --- PLANŠETĖ: 769px – 1024px --- */
+    @media (min-width: 769px) and (max-width: 1024px) {
+      /* Показываем бургер справа, скрываем горизонтальную навигацию */
+      .burger { display: flex; }
+      nav ul {
+        display: none; flex-direction: column;
+        position: fixed; top: 60px; left: 0; right: 0;
+        background: var(--clr-brand2);
+        padding: 12px 20px; gap: 2px;
+        box-shadow: 0 6px 20px rgba(0,0,0,.3);
+        max-height: calc(100vh - 60px); overflow-y: auto;
+        z-index: 998;
+      }
+      nav ul.open { display: flex; }
+      nav a, nav span[role="button"] {
+        font-size: 1rem; padding: 11px 14px; display: block;
+      }
+
+      .logo { font-size: 1.25rem; }
+      h2 { font-size: 1.55rem; }
+      .cards { grid-template-columns: repeat(2, 1fr); }
+      .contacts-grid { grid-template-columns: repeat(2, 1fr); }
+      .about-cols { gap: 28px; }
+      table { font-size: .85rem; }
+      th, td { padding: 10px 12px; }
+    }
+
+    /* --- MOBILIEJI: ≤ 768px --- */
+    @media (max-width: 768px) {
+      /* Navigacija */
+      nav ul {
+        display: none; flex-direction: column;
+        position: fixed; top: 60px; left: 0; right: 0;
+        background: var(--clr-brand2);
+        padding: 12px 16px; gap: 2px;
+        box-shadow: 0 6px 20px rgba(0,0,0,.3);
+        max-height: calc(100vh - 60px); overflow-y: auto;
+      }
+      nav ul.open { display: flex; }
+      nav a { font-size: .95rem; padding: 10px 12px; border-radius: 6px; display: block; }
+      .burger { display: flex; }
+
+      /* Maketas */
+      .about-cols { grid-template-columns: 1fr; gap: 20px; }
+      .cards { grid-template-columns: 1fr 1fr; gap: 16px; }
+      .contacts-grid { grid-template-columns: 1fr 1fr; gap: 16px; }
+
+      /* Hero */
+      #pradzia { padding: 60px 0 52px; }
+      #pradzia p { font-size: 1rem; }
+      .hero-cta { gap: 10px; }
+      .btn { padding: 11px 22px; font-size: .9rem; }
+
+      /* Sekcijų tarpai */
+      section { padding: 52px 0; }
+
+      /* Straipsnių blokai */
+      .article-block { padding: 24px 20px; }
+      .article-block h2 { font-size: 1.3rem; }
+
+      /* Lentelės */
+      .tbl-wrap { margin: 16px -4px; }
+      table { font-size: .8rem; }
+      th, td { padding: 9px 10px; }
+
+      /* FAQ */
+      .faq-q { font-size: .9rem; padding: 14px 16px; }
+      .faq-a { padding: 0 16px 14px; }
+
+      /* Žingsniai */
+      .steps li { padding: 12px 12px 12px 54px; font-size: .92rem; }
+      .steps li::before { width: 30px; height: 30px; font-size: .85rem; left: 12px; }
+
+      /* Info langelis */
+      .info-box { font-size: .87rem; padding: 12px 14px; }
+
+      /* H2 dydis */
+      h2 { font-size: 1.5rem; }
+      h3 { font-size: 1.08rem; }
+
+      /* Footer */
+      footer p { line-height: 2; font-size: .8rem; }
+    }
+
+    /* --- MAŽI TELEFONAI: ≤ 480px --- */
+    @media (max-width: 480px) {
+      section { padding: 40px 0; }
+      .container { padding: 0 14px; }
+
+      /* Vienas stulpelis visiems tinkleliams */
+      .cards { grid-template-columns: 1fr; gap: 14px; }
+      .contacts-grid { grid-template-columns: 1fr; gap: 14px; }
+
+      /* Hero */
+      #pradzia { padding: 44px 0 40px; }
+      .hero-cta { flex-direction: column; align-items: flex-start; }
+      .btn { width: 100%; text-align: center; padding: 13px 16px; }
+
+      /* Straipsniai */
+      .article-block { padding: 18px 14px; border-radius: 8px; }
+      .article-block h2 { font-size: 1.18rem; padding-left: 12px; }
+
+      /* Lentelė - horizontalus slinkimas */
+      table { min-width: 480px; }
+      th, td { padding: 8px 9px; font-size: .77rem; }
+
+      /* Žingsniai */
+      .steps li { padding: 11px 10px 11px 48px; font-size: .88rem; }
+      .steps li::before { width: 28px; height: 28px; font-size: .8rem; left: 10px; }
+
+      /* Kortelės */
+      .card { padding: 20px 16px; }
+
+      /* Kontaktai */
+      .contact-card { padding: 18px 16px; }
+
+      /* FAQ */
+      .faq-q { font-size: .86rem; gap: 8px; }
+
+      /* Tipografija */
+      h2 { font-size: 1.25rem; }
+      h3 { font-size: 1rem; }
+      p, li { font-size: .92rem; }
+
+      /* Disclaimer */
+      .disclaimer-banner { font-size: .84rem; padding: 12px 14px; }
+
+      /* Footer */
+      footer p { font-size: .76rem; }
+    }
+
+    /* --- LABAI MAŽI: ≤ 360px --- */
+    @media (max-width: 360px) {
+      .logo { font-size: 1.15rem; }
+      h2 { font-size: 1.12rem; }
+      .article-block h2 { font-size: 1.05rem; }
+      table { min-width: 420px; }
+      th, td { padding: 7px 8px; font-size: .73rem; }
+    }
+  </style>
+</head>
+
 <body>
+<div class="page-wrap">
 
-<!-- ═══ MOBILE SIDEBAR ═══ -->
-<amp-sidebar id="sidebar" layout="nodisplay" side="right">
-  <div class="sb-header">
-    <span class="sb-logo">▲ VMI Kompasas</span>
-    <button class="sb-close" on="tap:sidebar.close" aria-label="Uždaryti">✕</button>
-  </div>
-  <div class="sb-links">
-    <a href="#home" on="tap:sidebar.close">🏠 Pradžia</a>
-    <a href="#funkcijos" on="tap:sidebar.close">📋 VMI funkcijos</a>
-    <a href="#eds" on="tap:sidebar.close">🌐 EDS portalas</a>
-    <a href="#mokesciai" on="tap:sidebar.close">💰 Mokesčiai</a>
-    <a href="#faq" on="tap:sidebar.close">❓ Klausimai</a>
-    <a href="#patarimai" on="tap:sidebar.close">💡 Patarimai</a>
-    <a href="#apie" on="tap:sidebar.close">ℹ️ Apie mus</a>
-    <a href="#privatumas" on="tap:sidebar.close">🔒 Privatumas</a>
-    <a href="#kontaktai" on="tap:sidebar.close">📬 Kontaktai</a>
-  </div>
-</amp-sidebar>
+  <!-- ===== HEADER ===== -->
+  <header role="banner">
+    <div class="nav-inner">
+      <span onclick="navTo('pradzia')" class="logo" role="button" tabindex="0" aria-label="VMINAV – pradžia" style="cursor:pointer;">VMI<span>NAV</span></span>
+      <button class="burger" id="burger" aria-label="Atidaryti meniu" aria-expanded="false" aria-controls="main-nav">
+        <span></span><span></span><span></span>
+      </button>
+      <nav aria-label="Pagrindinė navigacija">
+        <ul id="main-nav" role="list">
+          <li><span onclick="navTo('pradzia')" role="button" tabindex="0">Pradžia</span></li>
+          <li><span onclick="navTo('apie')" role="button" tabindex="0">Apie mus</span></li>
+          <li><span onclick="navTo('deklaracija')" role="button" tabindex="0">Deklaracija</span></li>
+          <li><span onclick="navTo('pvm')" role="button" tabindex="0">PVM</span></li>
+          <li><span onclick="navTo('iv')" role="button" tabindex="0">Individuali veikla</span></li>
+          <li><span onclick="navTo('terminai')" role="button" tabindex="0">Terminai</span></li>
+          <li><span onclick="navTo('duk')" role="button" tabindex="0">D.U.K.</span></li>
+          <li><span onclick="navTo('kontaktai')" role="button" tabindex="0">Kontaktai</span></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-<!-- ═══ NAV ═══ -->
-<nav>
-  <div class="nav-inner">
-    <a href="#home" class="nav-logo">
-      <div class="nav-logo-icon">
-        <svg width="22" height="22" viewBox="0 0 22 22" fill="none"><polygon points="11,2 20,19 2,19" fill="white" opacity="0.9"/><circle cx="11" cy="14" r="3" fill="white"/></svg>
-      </div>
-      <span class="nav-logo-name">VMI Kompasas</span>
-    </a>
-    <ul class="nav-links">
-      <li><a href="#home">Pradžia</a></li>
-      <li><a href="#funkcijos">VMI funkcijos</a></li>
-      <li><a href="#mokesciai">Mokesčiai</a></li>
-      <li><a href="#faq">Klausimai</a></li>
-      <li><a href="#apie">Apie mus</a></li>
-      <li><a href="#kontaktai">Kontaktai</a></li>
-    </ul>
-    <button class="nav-burger" on="tap:sidebar.toggle" aria-label="Atidaryti meniu">
-      <span></span><span></span><span></span>
-    </button>
-  </div>
-</nav>
+  <main id="main-content">
 
-<!-- ═══ HERO ═══ -->
-<section id="home">
-<div class="hero">
-  <div class="hero-inner">
-    <div>
-      <div class="hero-badge">🧭 Nepriklausomas mokesčių portalas</div>
-      <h1>Supraskite mokesčius <span class="hero-em">be streso</span></h1>
-      <p class="hero-sub">VMI Kompasas padeda Lietuvos gyventojams ir verslininkams orientuotis mokesčių sistemoje. Aktualūs duomenys, aiški kalba, praktiniai patarimai.</p>
-      <div class="hero-btns">
-        <a href="#funkcijos" class="btn-primary">Naršyti turinį →</a>
-        <a href="https://www.eds.vmi.lt" target="_blank" rel="noopener" class="btn-outline">EDS portalas</a>
-      </div>
-    </div>
-    <div class="hero-stats">
-      <div class="hstat">
-        <div class="hstat-num">9</div>
-        <div class="hstat-lbl">Informacijos skyriai</div>
-      </div>
-      <div class="hstat">
-        <div class="hstat-num">100%</div>
-        <div class="hstat-lbl">Nemokama prieiga</div>
-      </div>
-      <div class="hstat">
-        <div class="hstat-num">LT</div>
-        <div class="hstat-lbl">Lietuvių kalba</div>
-      </div>
-    </div>
-  </div>
-</div>
-</section>
-
-<!-- ═══ TRUST BAR ═══ -->
-<div class="trust-bar">
-  <div class="trust-inner">
-    <div class="trust-item"><span class="trust-dot">✔</span> Tikslinga informacija</div>
-    <div class="trust-item"><span class="trust-dot">✔</span> Reguliarūs atnaujinimai</div>
-    <div class="trust-item"><span class="trust-dot">✔</span> Aiški kalba be žargono</div>
-    <div class="trust-item"><span class="trust-dot">✔</span> Nepriklausomas šaltinis</div>
-    <div class="trust-item"><span class="trust-dot">✔</span> Nemokama prieiga</div>
-  </div>
-</div>
-
-<!-- ═══ FUNKCIJOS ═══ -->
-<section id="funkcijos">
-<div class="wrap">
-  <div class="sec-label">Ką veikia VMI</div>
-  <h2 class="sec-title">6 pagrindinės VMI funkcijos</h2>
-  <div class="divider"></div>
-  <p class="sec-sub">Valstybinė mokesčių inspekcija atlieka plačią veiklą, tiesiogiai liečiančią kiekvieną Lietuvos gyventoją ir verslą.</p>
-  <div class="cards">
-    <div class="card">
-      <div class="card-icon">📋</div>
-      <div class="card-title">Mokesčių deklaravimas</div>
-      <div class="card-body">Kasmet gyventojai teikia GPM deklaraciją per EDS portalą. Sistema daugeliu atvejų automatiškai užpildo duomenis – tereikia patvirtinti ir pateikti.</div>
-    </div>
-    <div class="card">
-      <div class="card-icon">💰</div>
-      <div class="card-title">Mokesčių surinkimas</div>
-      <div class="card-body">VMI užtikrina, kad GPM, PVM, pelno mokestis ir kiti mokesčiai būtų laiku ir tiksliai sumokami – tai sudaro didžiąją dalį valstybės biudžeto.</div>
-    </div>
-    <div class="card">
-      <div class="card-icon">↩️</div>
-      <div class="card-title">Mokesčių grąžinimas</div>
-      <div class="card-body">Permokėjus mokesčius, VMI grąžina skirtumą. GPM grąžinimas po metinės deklaracijos yra vienas populiariausių procesų, prieinamas visiems gyventojams.</div>
-    </div>
-    <div class="card">
-      <div class="card-icon">🔍</div>
-      <div class="card-title">Kontrolė ir auditai</div>
-      <div class="card-body">VMI tikrina deklaracijas, vykdo mokestinius auditus ir tyrimus. Tikslas – užtikrinti sąžiningą apmokestinimą ir gerinti bendrą mokestinę kultūrą.</div>
-    </div>
-    <div class="card">
-      <div class="card-icon">🗣️</div>
-      <div class="card-title">Konsultacijos ir pagalba</div>
-      <div class="card-body">VMI teikia nemokamas konsultacijas telefonu, el. paštu ir fiziškai padaliniuose. Savitarnos sistema el. erdvėje leidžia rasti atsakymus visą parą.</div>
-    </div>
-    <div class="card">
-      <div class="card-icon">🌐</div>
-      <div class="card-title">Skaitmeninės paslaugos</div>
-      <div class="card-body">Per EDS sistemą prieinamos visos VMI paslaugos: deklaracijos, pažymos, registracijos ir prašymai. Sistema veikia 24/7 ir integruota su el. bankininkyste.</div>
-    </div>
-  </div>
-
-</div>
-</section>
-
-<!-- ═══ EDS ═══ -->
-<section id="eds" class="section-alt">
-<div class="wrap">
-  <div class="sec-label">Skaitmeninės paslaugos</div>
-  <h2 class="sec-title">EDS – mokesčiai vienu paspaudimu</h2>
-  <div class="divider"></div>
-  <p class="sec-sub">Elektroninė deklaravimo sistema (EDS) – VMI savitarnos portalas, leidžiantis tvarkyti visus mokesčių reikalus internetu, neapsilankius fiziniame padalinyje.</p>
-  <div class="steps">
-    <div class="step">
-      <div class="step-circle">1</div>
-      <div class="step-title">Prisijunkite</div>
-      <div class="step-body">El. bankininkystė, Smart-ID, mobilusis parašas arba elektroninis parašas.</div>
-    </div>
-    <div class="step">
-      <div class="step-circle">2</div>
-      <div class="step-title">Pasirinkite paslaugą</div>
-      <div class="step-body">Deklaracijos, grąžinimų prašymai, pažymos, registracija – viskas vienoje sistemoje.</div>
-    </div>
-    <div class="step">
-      <div class="step-circle">3</div>
-      <div class="step-title">Užpildykite formą</div>
-      <div class="step-body">Daugelis laukų pildomi automatiškai iš valstybinių registrų – taupote laiką.</div>
-    </div>
-    <div class="step">
-      <div class="step-circle">4</div>
-      <div class="step-title">Pateikite ir sekite</div>
-      <div class="step-body">Patvirtinkite dokumentą ir stebėkite būseną. Grąžinimai atliekami per 30 d.</div>
-    </div>
-  </div>
-  <div class="eds-cta">
-    <div>
-      <div class="eds-cta-title">Oficialus EDS portalas</div>
-      <div class="eds-cta-sub">Prisijunkite prie VMI elektroninių paslaugų sistemos</div>
-    </div>
-    <a href="https://www.eds.vmi.lt" target="_blank" rel="noopener" class="eds-btn">🌐 eds.vmi.lt →</a>
-  </div>
-</div>
-</section>
-
-<!-- ═══ MOKESČIAI ═══ -->
-<section id="mokesciai">
-<div class="wrap">
-  <div class="sec-label">Mokesčių sistema</div>
-  <h2 class="sec-title">Pagrindiniai Lietuvos mokesčiai</h2>
-  <div class="divider"></div>
-  <p class="sec-sub">VMI administruoja keletą pagrindinių mokesčių rūšių. Toliau – aiški jų apžvalga su tarifais ir mokėtojais.</p>
-  <table class="tax-table">
-    <thead>
-      <tr>
-        <th>Kodas</th>
-        <th>Mokestis</th>
-        <th>Tarifas</th>
-        <th>Mokėtojai</th>
-        <th>Tipas</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td class="tax-abbr">GPM</td>
-        <td><strong>Gyventojų pajamų mokestis</strong><span class="tax-note">Darbo, nuomos, vertybinių popierių ir kt. pajamos.</span></td>
-        <td><strong>20 % / 32 %</strong></td>
-        <td>Fiziniai asmenys</td>
-        <td><span class="tag tag-green">Tiesioginis</span></td>
-      </tr>
-      <tr>
-        <td class="tax-abbr">PVM</td>
-        <td><strong>Pridėtinės vertės mokestis</strong><span class="tax-note">Beveik visos prekės ir paslaugos.</span></td>
-        <td><strong>21 % / 9 % / 5 %</strong></td>
-        <td>Juridiniai asmenys</td>
-        <td><span class="tag tag-blue">Netiesioginis</span></td>
-      </tr>
-      <tr>
-        <td class="tax-abbr">PM</td>
-        <td><strong>Pelno mokestis</strong><span class="tax-note">Įmonių pelnas. Mažoms įmonėms – lengvatinis 5 %.</span></td>
-        <td><strong>15 % / 5 %</strong></td>
-        <td>Juridiniai asmenys</td>
-        <td><span class="tag tag-green">Tiesioginis</span></td>
-      </tr>
-      <tr>
-        <td class="tax-abbr">SD</td>
-        <td><strong>Socialinio draudimo įmokos</strong><span class="tax-note">Pensijų, ligos ir kitoms socialinėms garantijoms.</span></td>
-        <td><strong>19,5 % + 6,98 %</strong></td>
-        <td>Darbdaviai ir darbuotojai</td>
-        <td><span class="tag tag-green">Tiesioginis</span></td>
-      </tr>
-      <tr>
-        <td class="tax-abbr">NT</td>
-        <td><strong>Nekilnojamojo turto mokestis</strong><span class="tax-note">Skaičiuojamas nuo NT mokestinės vertės.</span></td>
-        <td><strong>0,5 % – 3 %</strong></td>
-        <td>NT savininkai</td>
-        <td><span class="tag tag-green">Tiesioginis</span></td>
-      </tr>
-      <tr>
-        <td class="tax-abbr">AKM</td>
-        <td><strong>Akcizai</strong><span class="tax-note">Alkoholis, tabakas, degalai, energetiniai produktai.</span></td>
-        <td><strong>Pagal tarifų lentelę</strong></td>
-        <td>Gamintojai ir importuotojai</td>
-        <td><span class="tag tag-blue">Netiesioginis</span></td>
-      </tr>
-    </tbody>
-  </table>
-</div>
-</section>
-
-<!-- ═══ FAQ ═══ -->
-<section id="faq" class="section-alt">
-<div class="wrap">
-  <div class="sec-label">Dažni klausimai</div>
-  <h2 class="sec-title">Atsakymai į populiariausius klausimus</h2>
-  <div class="divider"></div>
-  <amp-accordion expand-single-section>
-    <section>
-      <h3>Iki kada reikia pateikti GPM deklaraciją? <div class="faq-arrow"><svg width="10" height="10" viewBox="0 0 10 10"><path d="M1 3l4 4 4-4" stroke="#27ae60" stroke-width="2" stroke-linecap="round" fill="none"/></svg></div></h3>
-      <div class="faq-a">Metinė GPM deklaracija (forma FR0462) už praėjusius metus teikiama iki <strong>gegužės 1 d.</strong> Pvz., 2024 m. pajamų deklaracija – iki 2025 m. gegužės 1 d. Vėluojant gresia bauda. Deklaruoti galima per <a href="https://www.eds.vmi.lt" target="_blank" rel="noopener">eds.vmi.lt</a>.</div>
-    </section>
-    <section>
-      <h3>Kaip gauti GPM grąžinimą? <div class="faq-arrow"><svg width="10" height="10" viewBox="0 0 10 10"><path d="M1 3l4 4 4-4" stroke="#27ae60" stroke-width="2" stroke-linecap="round" fill="none"/></svg></div></h3>
-      <div class="faq-a">Pateikite metinę GPM deklaraciją per EDS portalą. Sistema automatiškai apskaičiuos permokėtą sumą. Grąžinimas pervedamas į nurodytą sąskaitą per <strong>30 kalendorinių dienų</strong>. Taip pat galite skirti iki 1,2 % GPM paramai.</div>
-    </section>
-    <section>
-      <h3>Ar individualios veiklos vykdytojas moka GPM? <div class="faq-arrow"><svg width="10" height="10" viewBox="0 0 10 10"><path d="M1 3l4 4 4-4" stroke="#27ae60" stroke-width="2" stroke-linecap="round" fill="none"/></svg></div></h3>
-      <div class="faq-a">Taip. Individualios veiklos vykdytojai moka GPM nuo gauto pelno (pajamos atėmus leidžiamus atskaitymus). Taikomas <strong>15 % tarifas</strong>. Taip pat mokamos socialinio draudimo įmokos. Veiklą reikia įregistruoti VMI ir pateikti metinę ataskaitą.</div>
-    </section>
-    <section>
-      <h3>Kada privaloma registruotis PVM mokėtoju? <div class="faq-arrow"><svg width="10" height="10" viewBox="0 0 10 10"><path d="M1 3l4 4 4-4" stroke="#27ae60" stroke-width="2" stroke-linecap="round" fill="none"/></svg></div></h3>
-      <div class="faq-a">PVM mokėtoju registruotis privaloma, kai per paskutinius 12 mėnesių pajamos viršija <strong>45 000 EUR</strong>. Galima registruotis ir savanoriškai. Registracija atliekama per EDS (prašymas FR0388) ir įsigalioja nuo kitos dienos.</div>
-    </section>
-    <section>
-      <h3>Kaip peržiūrėti savo pajamų istoriją? <div class="faq-arrow"><svg width="10" height="10" viewBox="0 0 10 10"><path d="M1 3l4 4 4-4" stroke="#27ae60" stroke-width="2" stroke-linecap="round" fill="none"/></svg></div></h3>
-      <div class="faq-a">Per EDS portalą galite peržiūrėti visas gautas pajamas ir apskaičiuotus mokesčius. Ieškokite skyriuje „Mano VMI" → „Gautos pajamos". Darbdaviai privalo pateikti duomenis VMI, todėl informacija atnaujinama reguliariai.</div>
-    </section>
-    <section>
-      <h3>Kaip susisiekti su VMI konsultantu? <div class="faq-arrow"><svg width="10" height="10" viewBox="0 0 10 10"><path d="M1 3l4 4 4-4" stroke="#27ae60" stroke-width="2" stroke-linecap="round" fill="none"/></svg></div></h3>
-      <div class="faq-a">VMI Mokesčių informacijos centras: <strong>1882</strong> (Lietuva) arba <strong>+370 5 255 3190</strong> (iš užsienio). Darbo laikas: I–IV 8:00–17:00, V 8:00–15:45. Taip pat galite kreiptis per EDS arba atvykti į bet kurį VMI padalinį.</div>
-    </section>
-  </amp-accordion>
-</div>
-</section>
-
-<!-- ═══ PATARIMAI ═══ -->
-<section id="patarimai">
-<div class="wrap">
-  <div class="sec-label">Naudingos žinios</div>
-  <h2 class="sec-title">Praktiniai mokesčių patarimai</h2>
-  <div class="divider"></div>
-  <div class="tips">
-    <div class="tip">
-      <div class="tip-icon">📅</div>
-      <div>
-        <div class="tip-title">Laikykitės terminų</div>
-        <div class="tip-body">GPM deklaracija – iki gegužės 1 d. PVM – iki kiekvieno mėnesio 25 d. Vėluojant gresia delspinigiai. Nustatykite priminimus iš anksto – tai paprasta ir nemokama.</div>
-      </div>
-    </div>
-    <div class="tip">
-      <div class="tip-icon">🏠</div>
-      <div>
-        <div class="tip-title">Išnaudokite GPM lengvatas</div>
-        <div class="tip-body">Turite teisę atskaityti išlaidas gyvybės draudimui, papildomai pensijai, profesiniam mokymui ir būsto paskolos palūkanoms. Tai gali padidinti grąžinamą sumą.</div>
-      </div>
-    </div>
-    <div class="tip">
-      <div class="tip-icon">📂</div>
-      <div>
-        <div class="tip-title">Saugokite dokumentus 5 metus</div>
-        <div class="tip-body">Kasos čekiai, sąskaitos, sutartys – VMI gali jų paprašyti tikrinimo metu. Skaitmenines kopijas galite saugoti debesyje arba el. paštu siunčiamose žinutėse.</div>
-      </div>
-    </div>
-    <div class="tip">
-      <div class="tip-icon">💼</div>
-      <div>
-        <div class="tip-title">Verslui: registruokitės laiku</div>
-        <div class="tip-body">Pradedant veiklą, per 5 darbo dienas prisiregistruokite VMI. PVM mokėtojo registracija privaloma viršijus 45 000 EUR apyvartą. Laiku registruojantis išvengiama baudų.</div>
-      </div>
-    </div>
-    <div class="tip">
-      <div class="tip-icon">🤝</div>
-      <div>
-        <div class="tip-title">Skirkite 1,2 % GPM paramai</div>
-        <div class="tip-body">Kiekvienais metais galite nukreipti iki 1,2 % sumokėto GPM pasirinktai organizacijai. Tai nieko nekainuoja – tik paskirstote jau sumokėtą mokestį per EDS.</div>
-      </div>
-    </div>
-    <div class="tip">
-      <div class="tip-icon">📊</div>
-      <div>
-        <div class="tip-title">Tikrinkite savo mokesčių istoriją</div>
-        <div class="tip-body">Per EDS galite bet kada peržiūrėti deklaracijas, mokėjimus ir gautus dokumentus. Rekomenduojame tai daryti bent kartą per metus, kad nekiltų netikėtumų.</div>
-      </div>
-    </div>
-  </div>
-</div>
-</section>
-
-<!-- ═══ APIE ═══ -->
-<section id="apie" class="section-alt">
-<div class="wrap">
-  <div class="sec-label">Apie portalą</div>
-  <h2 class="sec-title">Kas yra VMI Kompasas?</h2>
-  <div class="divider"></div>
-  <div class="about-grid">
-    <div>
-      <p class="about-p"><strong>VMI Kompasas</strong> – nepriklausomas informacinis portalas, kuriame rasite išsamią ir patikimą informaciją apie Lietuvos mokesčių sistemą. Mūsų tikslas – paaiškinti sudėtingus mokesčių reikalus paprasta kalba, be biurokratinio žargono.</p>
-      <p class="about-p">Mes nesame oficiali VMI svetainė ir neapdorojame jokių deklaracijų. Oficialios paslaugos prieinamos <a href="https://www.vmi.lt" target="_blank" rel="noopener" class="about-link">vmi.lt</a> ir <a href="https://www.eds.vmi.lt" target="_blank" rel="noopener" class="about-link">eds.vmi.lt</a>.</p>
-      <p class="about-p">Informacija portale reguliariai atnaujinama, siekiant atspindėti naujausius mokesčių įstatymų pakeitimus ir VMI procedūras.</p>
-      <div class="values">
-        <div class="value-item">✅ Tikslinga informacija</div>
-        <div class="value-item">🔄 Reguliarūs atnaujinimai</div>
-        <div class="value-item">🚫 Jokio šališkumo</div>
-        <div class="value-item">💬 Aiški, paprasta kalba</div>
-      </div>
-    </div>
-    <div class="about-img-box">
-      <svg width="160" height="160" viewBox="0 0 160 160" fill="none">
-        <circle cx="80" cy="80" r="72" fill="rgba(255,255,255,0.08)"/>
-        <polygon points="80,20 130,115 30,115" fill="rgba(255,255,255,0.85)"/>
-        <circle cx="80" cy="95" r="13" fill="rgba(1,77,42,0.75)"/>
-        <circle cx="44" cy="40" r="5" fill="rgba(255,255,255,0.3)"/>
-        <circle cx="120" cy="34" r="4" fill="rgba(255,255,255,0.25)"/>
-        <text x="80" y="148" text-anchor="middle" font-size="12" font-weight="700" fill="rgba(255,255,255,0.7)" font-family="Arial">VMI Kompasas</text>
-      </svg>
-    </div>
-  </div>
-</div>
-</section>
-
-<!-- ═══ PRIVATUMAS ═══ -->
-<section id="privatumas">
-<div class="wrap">
-  <div class="sec-label">Teisinė informacija</div>
-  <h2 class="sec-title">Privatumo politika</h2>
-  <div class="divider"></div>
-  <div class="prose">
-    <h3>1. Bendrosios nuostatos</h3>
-    <p>Ši privatumo politika apibrėžia, kaip VMI Kompasas (toliau – „Portalas") renka, naudoja ir saugo informaciją, kurią pateikia lankytojai. Naudodamiesi Portalu, jūs sutinkate su šia politika.</p>
-    <h3>2. Renkami duomenys</h3>
-    <p>Portalas <strong>nerenkia asmeninių duomenų</strong> automatiškai. Galime rinkti anoniminę statistinę informaciją:</p>
-    <ul>
-      <li>Puslapių lankomumas ir naršymo trukmė</li>
-      <li>Naudojama naršyklė ir operacinė sistema</li>
-      <li>Bendras geografinis regionas (šalis)</li>
-      <li>Peradresavimo šaltinis</li>
-    </ul>
-    <p>Jei susisiekiate el. paštu, jūsų kontaktiniai duomenys bus naudojami tik atsakymui.</p>
-    <h3>3. Slapukai (Cookies)</h3>
-    <p>Naudojame tik techninius slapukus, būtinus tinkamam veikimui. Reklaminių ar sekimo slapukų be sutikimo nenaudojame. Slapukus galite valdyti naršyklės nustatymuose.</p>
-    <h3>4. Duomenų saugojimas</h3>
-    <p>Duomenys saugomi Europos Sąjungos teritorijoje pagal BDAR (GDPR) reikalavimus.</p>
-    <h3>5. Trečiųjų šalių nuorodos</h3>
-    <p>Portalas pateikia nuorodas į oficialias VMI ir EDS svetaines. VMI Kompasas neatsako už šių svetainių turinį ar privatumo politiką.</p>
-    <h3>6. Jūsų teisės</h3>
-    <p>Pagal BDAR turite teisę susipažinti su duomenimis, prašyti juos ištaisyti ar ištrinti. Dėl duomenų klausimų rašykite: <a href="mailto:info@vmikompasas.com">info@vmikompasas.com</a></p>
-    <h3>7. Politikos keitimai</h3>
-    <p>VMI Kompasas pasilieka teisę keisti šią politiką. Apie esminius pakeitimus informuosime Portale. Paskutinį kartą atnaujinta: 2025 m. sausis.</p>
-  </div>
-</div>
-</section>
-
-<!-- ═══ KONTAKTAI ═══ -->
-<section id="kontaktai" class="section-alt">
-<div class="wrap">
-  <div class="sec-label">Susisiekite</div>
-  <h2 class="sec-title">Kontaktai</h2>
-  <div class="divider"></div>
-  <p class="sec-sub">Turite klausimų apie portalą ar pateikiamą informaciją? Susisiekite su mumis.</p>
-  <div class="contact-grid">
-    <div class="contact-box">
-      <h3>VMI Kompasas</h3>
-      <div class="contact-item">
-        <div class="c-icon">🏢</div>
-        <div>
-          <div class="c-label">Portalas</div>
-          <div class="c-value">VMI Kompasas</div>
+    <!-- ===== HERO ===== -->
+    <section id="pradzia" aria-labelledby="hero-heading">
+      <div class="container">
+        <span class="hero-badge">🇱🇹 Nepriklausomas mokesčių portalas</span>
+        <h1 id="hero-heading">Mokesčiai Lietuvoje –<br>paprastai ir aiškiai</h1>
+        <p>VMINAV – nepriklausomas informacinis ir konsultacinis portalas, skirtas padėti Lietuvos gyventojams bei verslo atstovams suprasti mokesčių sistemą, teisingai deklaruoti pajamas ir nepražiopsoti svarbių terminų.</p>
+        <div class="hero-cta">
+          <span onclick="navTo('deklaracija')" class="btn btn-primary" role="button" tabindex="0" style="cursor:pointer;">Kaip užpildyti deklaraciją →</span>
+          <span onclick="navTo('kontaktai')" class="btn btn-outline" role="button" tabindex="0" style="cursor:pointer;">Susisiekite su mumis</span>
         </div>
       </div>
-      <div class="contact-item">
-        <div class="c-icon">📍</div>
-        <div>
-          <div class="c-label">Adresas</div>
-          <div class="c-value">Dariaus ir Girėno g. 6, Vilnius, 02159<br>Vilniaus m. sav., Lithuania</div>
-        </div>
-      </div>
-      <div class="contact-item">
-        <div class="c-icon">✉️</div>
-        <div>
-          <div class="c-label">El. paštas</div>
-          <div class="c-value"><a href="mailto:info@vmikompasas.com">info@vmikompasas.com</a></div>
-        </div>
-      </div>
-      <div class="contact-item">
-        <div class="c-icon">📞</div>
-        <div>
-          <div class="c-label">Telefonas</div>
-          <div class="c-value"><a href="tel:+37068981050">+370 689 81050</a></div>
-        </div>
-      </div>
-      <div class="contact-item">
-        <div class="c-icon">🕐</div>
-        <div>
-          <div class="c-label">Darbo laikas</div>
-          <div class="c-value">I–V: 9:00 – 18:00</div>
-        </div>
-      </div>
-      <div class="contact-note">
-        ℹ️ <strong>Pastaba:</strong> Esame nepriklausomas informacinis portalas. Dėl oficialių mokesčių klausimų kreipkitės į VMI tiesiogiai: <strong>1882</strong> arba <a href="https://www.vmi.lt" target="_blank" rel="noopener">vmi.lt</a>
-      </div>
-    </div>
-    <div class="map-box">
-      <div class="map-placeholder">
-        <div class="map-pin">📍</div>
-        <div class="map-name">VMI Kompasas</div>
-        <div class="map-addr">Dariaus ir Girėno g. 6<br>Vilnius, 02159<br>Lithuania</div>
-        <a href="https://maps.google.com/?q=Dariaus+ir+Gireno+g.+6,+Vilnius,+Lithuania" target="_blank" rel="noopener" class="map-btn">🗺️ Atidaryti žemėlapyje</a>
-      </div>
-    </div>
-  </div>
-</div>
-</section>
+    </section>
 
-<!-- ═══ FOOTER ═══ -->
-<footer>
-  <div class="footer-inner">
-    <div class="footer-brand">
-      <div class="footer-logo-wrap">
-        <div class="footer-logo-icon">
-          <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><polygon points="10,2 18,17 2,17" fill="white" opacity="0.9"/></svg>
+    <!-- ===== APIE MUS ===== -->
+    <section id="apie" aria-labelledby="apie-heading">
+      <div class="container">
+        <div class="disclaimer-banner" role="note" aria-label="Svarbus pranešimas">
+          <strong>⚠️ Svarbu:</strong> VMINAV UAB yra <strong>nepriklausomas</strong> privatūs konsultacinis portalas ir <strong>nėra oficiali</strong> Valstybinės mokesčių inspekcijos (VMI) svetainė ar jos padalinys. Oficiali VMI svetainė yra <a href="https://www.vmi.lt" target="_blank" rel="noopener noreferrer">vmi.lt</a>. Pateikiama informacija yra edukacinė ir gali keistis – visada patikrinkite aktualią informaciją VMI šaltiniuose.
         </div>
-        <span class="footer-logo-name">VMI Kompasas</span>
+
+        <h2 id="apie-heading">Apie VMINAV UAB</h2>
+        <div class="about-cols">
+          <div>
+            <p>Esame mokesčių konsultantų komanda, padedanti fiziniams asmenims, individualia veikla besiverčiantiems gyventojams bei smulkaus verslo atstovams suvokti Lietuvos mokesčių sistemą.</p>
+            <p>Mūsų tikslas – pateikti suprantamą, aktualią ir praktiškai naudingą informaciją apie VMI tvarką, mokestines prievoles ir deklaravimo procedūras.</p>
+            <p>Mes <strong>neatstovaukime</strong> VMI ir nesame jos darbuotojai. Jei turite oficialių klausimų – kreipkitės tiesiogiai į <a href="https://www.vmi.lt" target="_blank" rel="noopener noreferrer">VMI</a>.</p>
+          </div>
+          <div>
+            <h3>Ką mes siūlome?</h3>
+            <ul class="check-list">
+              <li>Aiškus supažindinimas su mokesčių sistema</li>
+              <li>Nuoseklūs deklaravimo proceso paaiškinimai</li>
+              <li>Informacija apie PVM, GPM ir kitas mokesčių rūšis</li>
+              <li>Individualios veiklos registracijos gidas</li>
+              <li>Aktualių terminų kalendorius</li>
+              <li>Asmeninės konsultacijos (el. paštu ir telefonu)</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Paslaugų kortelės -->
+        <div class="cards">
+          <article class="card">
+            <div class="card-icon">📄</div>
+            <h3>Deklaravimas</h3>
+            <p>Žingsnis po žingsnio paaiškinsime, kaip užpildyti ir pateikti mokesčių deklaraciją per EDS.</p>
+            <span onclick="navTo('deklaracija')" class="card-link" role="button" tabindex="0" style="cursor:pointer;">Skaityti daugiau →</span>
+          </article>
+          <article class="card">
+            <div class="card-icon">💰</div>
+            <h3>PVM (pridėtinės vertės mokestis)</h3>
+            <p>Kas yra PVM, kada reikia registruotis PVM mokėtoju ir kaip skaičiuoti mokestį.</p>
+            <span onclick="navTo('pvm')" class="card-link" role="button" tabindex="0" style="cursor:pointer;">Skaityti daugiau →</span>
+          </article>
+          <article class="card">
+            <div class="card-icon">🧾</div>
+            <h3>Individuali veikla</h3>
+            <p>Kaip registruotis, kokie mokesčiai taikomi ir ką reikia žinoti apie individualią veiklą.</p>
+            <span onclick="navTo('iv')" class="card-link" role="button" tabindex="0" style="cursor:pointer;">Skaityti daugiau →</span>
+          </article>
+          <article class="card">
+            <div class="card-icon">📅</div>
+            <h3>Mokesčių terminai</h3>
+            <p>Visų svarbių deklaravimo ir mokėjimo terminų apžvalga – kad niekas neprailgtų.</p>
+            <span onclick="navTo('terminai')" class="card-link" role="button" tabindex="0" style="cursor:pointer;">Skaityti daugiau →</span>
+          </article>
+        </div>
       </div>
-      <p>Nepriklausomas informacinis portalas apie Lietuvos mokesčių sistemą. Patikima, aktuali ir aiški informacija kiekvienam.</p>
+    </section>
+
+    <!-- ===== DEKLARACIJA ===== -->
+    <section id="deklaracija" aria-labelledby="deklaracija-heading">
+      <div class="container">
+        <article class="article-block">
+          <h2 id="deklaracija-heading">Kaip užpildyti mokesčių deklaraciją</h2>
+
+          <p>Metinė gyventojų pajamų mokesčio (GPM) deklaracija (forma <strong>GPM311</strong>) teikiama kiekvienais metais už praėjusius metus. Ji privalo būti pateikta iki <strong>gegužės 1 d.</strong> Šis procesas vykdomas per VMI elektroninę sistemą.</p>
+
+          <div class="info-box">
+            <span class="icon">ℹ️</span> Deklaraciją galima pateikti internetu, prisijungus per Mano VMI portalą adresu <strong>deklaravimas.vmi.lt</strong>, naudojant el. bankininkystę, el. parašą arba „Smart-ID".
+          </div>
+
+          <h3>Žingsnis po žingsnio: kaip pateikti GPM deklaraciją</h3>
+          <ol class="steps">
+            <li>Prisijunkite prie <strong>Mano VMI</strong> portalo adresu <em>deklaravimas.vmi.lt</em> (per el. bankininkystę, Smart-ID arba el. parašą).</li>
+            <li>Pasirinkite skiltį <strong>„Deklaracijos"</strong> → <strong>„Teikti deklaraciją"</strong> → forma <strong>GPM311</strong>.</li>
+            <li>Sistema automatiškai užpildo didelę dalį duomenų (darbdavių ataskaitos, banko palūkanos ir kt.). Patikrinkite jų teisingumą.</li>
+            <li>Papildomai įveskite pajamas, kurių sistema neužpildė automatiškai: individualios veiklos, užsienio pajamos, nuomos pajamos ir kt.</li>
+            <li>Nurodykite <strong>leistinus atskaitymus</strong>: gyvybės draudimas, pensijų kaupimas (3 pakopa), studijų išlaidos, palūkanos už būsto paskolą.</li>
+            <li>Patikrinkite apskaičiuotą <strong>GPM permokos arba priemokos</strong> sumą. Jei yra permoka – nurodykite banko sąskaitą grąžinimui.</li>
+            <li>Pasirašykite ir pateikite deklaraciją. Gausite patvirtinimą el. paštu arba sistemoje.</li>
+          </ol>
+
+          <h3>Kas privalo teikti metinę deklaraciją?</h3>
+          <ul>
+            <li>Asmenys, kurių pajamos viršija neapmokestinamąjį minimumą (NPD riba).</li>
+            <li>Gyventojai, gavę pajamų iš kelių šaltinių (keli darbdaviai, nuoma, individuali veikla).</li>
+            <li>Asmenys, norintys susigrąžinti GPM permoką (pvz., dėl draudimo ar pensijų kaupimo atskaitymų).</li>
+            <li>Individualios veiklos vykdytojai (IV).</li>
+            <li>Asmenys, gavę pajamų iš užsienio.</li>
+          </ul>
+
+          <h3>Kokių klaidų vengti?</h3>
+          <ul>
+            <li><strong>Nepamiršti nurodyti visų pajamų šaltinių</strong> – nuomos, palūkanų, pardavimo pajamų.</li>
+            <li><strong>Nepamirškite atskaitymų</strong> – daugelis gyventojų nepasitelkia visų jiems priklausančių NPD ir kitų atskaitymų.</li>
+            <li><strong>Patikrinkite automatiškai užpildytus duomenis</strong> – kartais informacija būna netiksli arba nepilna.</li>
+            <li><strong>Venkite vėlavimo</strong> – pavėluotas deklaracijos pateikimas gali užtraukti baudą.</li>
+          </ul>
+
+          <div class="info-box">
+            <span class="icon">💡</span> <strong>Patarimas:</strong> Jei nežinote, ar privalote teikti deklaraciją, pasinaudokite VMI elektroniniu aptarnavimu arba kreipkitės į mus konsultacijai.
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ===== PVM ===== -->
+    <section id="pvm" aria-labelledby="pvm-heading">
+      <div class="container">
+        <article class="article-block">
+          <h2 id="pvm-heading">Kas yra PVM (Pridėtinės vertės mokestis)?</h2>
+
+          <p><strong>PVM</strong> – tai pridėtinės vertės mokestis (angl. <em>VAT – Value Added Tax</em>), taikomas prekių tiekimui, paslaugų teikimui ir importui Lietuvoje. Tai yra <em>netiesioginis</em> mokestis – jį faktiškai moka galutinis vartotojas, o verslo subjektai yra tarpininkai, renkantys PVM valstybei.</p>
+
+          <h3>PVM tarifai Lietuvoje</h3>
+          <div class="tbl-wrap">
+            <table>
+              <caption style="text-align:left; font-weight:700; margin-bottom:10px; font-size:.95rem;">Galiojantys PVM tarifai (nuolat tikrinkite aktualumą VMI)</caption>
+              <thead>
+                <tr><th>Tarifas</th><th>Taikoma</th><th>Pavyzdžiai</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>21 %</strong></td>
+                  <td>Standartinis tarifas – dauguma prekių ir paslaugų</td>
+                  <td>Elektronika, drabužiai, restoranų paslaugos</td>
+                </tr>
+                <tr>
+                  <td><strong>9 %</strong></td>
+                  <td>Lengvatinis tarifas</td>
+                  <td>Šildymas, kai kurios maisto prekės, knygos, vaistai, viešbučiai</td>
+                </tr>
+                <tr>
+                  <td><strong>5 %</strong></td>
+                  <td>Specialus lengvatinis tarifas</td>
+                  <td>Tam tikri vaistai ir medicinos prekės (pagal VMI sąrašą)</td>
+                </tr>
+                <tr>
+                  <td><strong>0 %</strong></td>
+                  <td>Eksportas, ES vidaus tiekimas, tam tikros finansų paslaugos</td>
+                  <td>Prekių eksportas, ES tiekimas PVM mokėtojams</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h3>Kada privaloma registruotis PVM mokėtoju?</h3>
+          <p>Asmuo ar įmonė <strong>privalo</strong> registruotis PVM mokėtoju VMI, kai per 12 mėnesių iš veiklos gaunamų pajamų suma viršija <strong>45 000 EUR</strong>. Pasiekus šią ribą, reikia kreiptis į VMI ne vėliau kaip per 5 darbo dienas.</p>
+
+          <ul>
+            <li><strong>Savanoriškas registravimas</strong> – galimas ir nepasiekus 45 000 EUR ribos, jei tai naudinga verslui (pvz., norint atsiskaityti pirkimo PVM).</li>
+            <li><strong>Registracija</strong> atliekama per Mano VMI portalą arba VMI skyriuje.</li>
+          </ul>
+
+          <h3>Kaip veikia PVM?</h3>
+          <ol class="steps">
+            <li><strong>Perkate prekes/paslaugas</strong> – mokate PVM tiekėjui (tai jūsų <em>pirkimo PVM</em>).</li>
+            <li><strong>Parduodate prekes/paslaugas</strong> – skaičiuojate PVM pirkėjui (tai jūsų <em>pardavimo PVM</em>).</li>
+            <li><strong>Skirtumo mokėjimas:</strong> jei pardavimo PVM didesnis – mokate skirtumą VMI. Jei mažesnis – VMI grąžina permokėtą sumą.</li>
+          </ol>
+
+          <h3>PVM deklaracijos pateikimo terminai</h3>
+          <ul>
+            <li><strong>Mėnesinė deklaracija</strong> (forma FR0600) – teikiama iki kito mėnesio <strong>25 dienos</strong>.</li>
+            <li><strong>Ketvirčio deklaracija</strong> – teikiama iki pirmojo mėnesio po ketvirčio <strong>25 dienos</strong>.</li>
+            <li>Deklaracija teikiama per <strong>EDS sistemą</strong> (deklaravimas.vmi.lt).</li>
+          </ul>
+
+          <div class="info-box">
+            <span class="icon">⚠️</span> Pasikeitimai mokesčių įstatymuose gali įtakoti tarifus ir ribas. Visada tikrinkite naujausius duomenis oficialioje <a href="https://www.vmi.lt" target="_blank" rel="noopener noreferrer">VMI svetainėje</a>.
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ===== INDIVIDUALI VEIKLA ===== -->
+    <section id="iv" aria-labelledby="iv-heading">
+      <div class="container">
+        <article class="article-block">
+          <h2 id="iv-heading">Kaip registruotis individualiai veiklai (IV)?</h2>
+
+          <p><strong>Individuali veikla</strong> – tai vienas paprasčiausių būdų pradėti savarankišką darbą Lietuvoje. Ji tinkama laisvai samdomiems specialistams (freelanceriams), smulkaus verslo atstovams, turintiems papildomą pajamų šaltinį.</p>
+
+          <h3>Individuali veikla – privalumai ir apribojimai</h3>
+          <div class="cards" style="margin-top:16px;">
+            <div class="card" style="border-top-color:#2ecc71;">
+              <h3 style="color:#27ae60;">✅ Privalumai</h3>
+              <ul style="font-size:.9rem; color:var(--clr-muted);">
+                <li>Paprastas ir greitas registravimas</li>
+                <li>Nereikia steigti įmonės</li>
+                <li>Galimybė naudotis fiksuoto GPM režimu</li>
+                <li>Galimybė išskaičiuoti verslo išlaidas</li>
+              </ul>
+            </div>
+            <div class="card" style="border-top-color:#e74c3c;">
+              <h3 style="color:#c0392b;">⚠️ Apribojimai</h3>
+              <ul style="font-size:.9rem; color:var(--clr-muted);">
+                <li>Asmeninė atsakomybė visu turtu</li>
+                <li>Ribotos socialinės garantijos</li>
+                <li>Sunkiau pritraukti investuotojus</li>
+                <li>Ne visos veiklos rūšys leidžiamos IV forma</li>
+              </ul>
+            </div>
+          </div>
+
+          <h3 style="margin-top:28px;">Registracijos žingsniai</h3>
+          <ol class="steps">
+            <li>Prisijunkite prie <strong>Mano VMI</strong> portalo (manoeidas.vmi.lt arba deklaravimas.vmi.lt).</li>
+            <li>Pasirinkite <strong>„Prašymai"</strong> → <strong>„Individualios veiklos registravimas"</strong>.</li>
+            <li>Nurodykite veiklos rūšis pagal <strong>EVRK 2 red.</strong> (Ekonominės veiklos rūšių klasifikatorių). Galima registruoti kelias veiklos rūšis.</li>
+            <li>Pasirinkite <strong>mokesčių režimą</strong>: standartinį arba fiksuoto dydžio GPM.</li>
+            <li>Pateikite prašymą. Pažyma apie veiklos registravimą išduodama iš karto elektroniniu būdu.</li>
+          </ol>
+
+          <h3>Mokesčiai individualiai veiklai</h3>
+          <div class="tbl-wrap">
+            <table>
+              <thead>
+                <tr><th>Mokestis</th><th>Tarifas</th><th>Pastabos</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>GPM (pajamų mokestis)</strong></td>
+                  <td>15 %</td>
+                  <td>Nuo veiklos pajamų minus leistini atskaitymai</td>
+                </tr>
+                <tr>
+                  <td><strong>Fiksuoto dydžio GPM</strong></td>
+                  <td>~5 % (sąlyginai)</td>
+                  <td>Specialus režimas tam tikroms veikloms; mokamas fiksuotas mokestis, kurį nustato VMI kiekvienai seniūnijai</td>
+                </tr>
+                <tr>
+                  <td><strong>VSD (socialinis draudimas)</strong></td>
+                  <td>12,52 %</td>
+                  <td>Nuo veiklos pajamų; gali keistis – tikrinkite VMI</td>
+                </tr>
+                <tr>
+                  <td><strong>PSD (sveikatos draudimas)</strong></td>
+                  <td>9 %</td>
+                  <td>Nuo veiklos pajamų; privaloma mokėti</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="info-box" style="margin-top:24px;">
+            <span class="icon">💡</span> Leidžiami atskaitymai: galima išskaičiuoti su veikla susijusias išlaidas (kompiuterio įsigijimas, biuro nuoma, komunikacijos išlaidos ir kt.) – tai sumažina apmokestinamąją bazę.
+          </div>
+
+          <h3>Svarbu žinoti</h3>
+          <ul>
+            <li>Veiklos pajamos deklaruojamos metinėje <strong>GPM311</strong> deklaracijoje iki gegužės 1 d.</li>
+            <li>Jei metinės pajamos viršija <strong>45 000 EUR</strong> – privaloma registruotis PVM mokėtoju.</li>
+            <li>Individualios veiklos vykdytojas <strong>neturi atskiro juridinio asmens statuso</strong> – jis atsako visu asmenine turtu.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- ===== TERMINAI ===== -->
+    <section id="terminai" aria-labelledby="terminai-heading">
+      <div class="container">
+        <article class="article-block">
+          <h2 id="terminai-heading">Mokesčių deklaravimo ir mokėjimo terminai</h2>
+
+          <p>Žemiau pateikiami dažniausiai aktualūs terminai. Atkreipkite dėmesį, kad terminai gali būti keičiami VMI ar Seimo sprendimais – visada papildomai tikrinkite aktualumą <a href="https://www.vmi.lt" target="_blank" rel="noopener noreferrer">vmi.lt</a>.</p>
+
+          <div class="tbl-wrap">
+            <table>
+              <thead>
+                <tr><th>Terminas</th><th>Dokumentas / Mokestis</th><th>Kas teikia</th><th>Pastabos</th></tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Iki gegužės 1 d.</strong></td>
+                  <td>Metinė GPM deklaracija (GPM311)</td>
+                  <td>Fiziniai asmenys, IV</td>
+                  <td>Už praėjusius metus</td>
+                </tr>
+                <tr>
+                  <td><strong>Iki mėnesio 25 d.</strong></td>
+                  <td>PVM deklaracija (FR0600) – mėnesinė</td>
+                  <td>PVM mokėtojai (mėnesiniai)</td>
+                  <td>Už praėjusį mėnesį</td>
+                </tr>
+                <tr>
+                  <td><strong>Iki ketvirčio paskutinio mėn. 25 d.</strong></td>
+                  <td>PVM deklaracija (FR0600) – ketvirčio</td>
+                  <td>PVM mokėtojai (ketvirčio)</td>
+                  <td>Už praėjusį ketvirtį</td>
+                </tr>
+                <tr>
+                  <td><strong>Kiekvieną mėnesį iki 15 d.</strong></td>
+                  <td>Darbdavio pranešimas (SAV ataskaita)</td>
+                  <td>Darbdaviai</td>
+                  <td>Darbo užmokesčio ataskaita</td>
+                </tr>
+                <tr>
+                  <td><strong>Iki spalio 1 d.</strong></td>
+                  <td>Pelno mokesčio avansiniai mokėjimai</td>
+                  <td>Juridiniai asmenys</td>
+                  <td>Metų vidurio avanso mokėjimas</td>
+                </tr>
+                <tr>
+                  <td><strong>Iki birželio 15 d.</strong></td>
+                  <td>Pelno mokesčio deklaracija (PLN204)</td>
+                  <td>UAB, MB ir kt. juridiniai asmenys</td>
+                  <td>Už praėjusius metus</td>
+                </tr>
+                <tr>
+                  <td><strong>Iki vasario 1 d.</strong></td>
+                  <td>Nekilnojamojo turto mokesčio deklaracija</td>
+                  <td>Juridiniai asmenys, IV</td>
+                  <td>Už turėtą NT</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="info-box" style="margin-top:24px;">
+            <span class="icon">📅</span> Jei terminas patenka į poilsio ar šventinę dieną, deklaracija paprastai teikiama kitą darbo dieną. Tikslią informaciją visada rasite <a href="https://www.vmi.lt" target="_blank" rel="noopener noreferrer">vmi.lt</a>.
+          </div>
+
+          <h3>Baudos už pavėluotą pateikimą</h3>
+          <ul>
+            <li>Pavėluotas deklaracijos pateikimas gali užtraukti administracinę baudą.</li>
+            <li>Papildomai gali būti skaičiuojamos <strong>delspinigiai</strong> nuo nesumokėtų mokesčių.</li>
+            <li>Savanoriškas klaidų ištaisymas (koreguota deklaracija) prieš VMI patikrinimą gali sumažinti sankcijas.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- ===== DUK / FAQ ===== -->
+    <section id="duk" aria-labelledby="duk-heading">
+      <div class="container">
+        <h2 id="duk-heading">Dažniausiai užduodami klausimai (D.U.K.)</h2>
+
+        <ul class="faq-list" role="list">
+
+          <li class="faq-item">
+            <div class="faq-q" role="button" tabindex="0" aria-expanded="false">
+              Ar privalau teikti metinę deklaraciją, jei dirbu pagal darbo sutartį?
+              <span class="faq-arrow" aria-hidden="true">▼</span>
+            </div>
+            <div class="faq-a">
+              Dažniausiai darbdavys išskaičiuoja GPM ir pateikia VMI reikiamas ataskaitas. Tačiau jei turėjote <strong>kelis darbdavius</strong>, gautas <strong>papildomų pajamų</strong> (nuoma, individuali veikla, dividendai) arba norite <strong>susigrąžinti permoką</strong> (pvz., dėl gyvybės draudimo atskaitymų) – deklaraciją teikti verta arba net privaloma.
+            </div>
+          </li>
+
+          <li class="faq-item">
+            <div class="faq-q" role="button" tabindex="0" aria-expanded="false">
+              Kaip prisijungti prie Mano VMI portalo?
+              <span class="faq-arrow" aria-hidden="true">▼</span>
+            </div>
+            <div class="faq-a">
+              Galite prisijungti per <strong>el. bankininkystę</strong> (SEB, Swedbank, Luminor ir kt.), <strong>Smart-ID</strong>, <strong>mobilųjį parašą</strong> arba <strong>kvalifikuotą el. parašą</strong>. Portalas pasiekiamas adresu <em>deklaravimas.vmi.lt</em>. Užsienio piliečiai gali kreiptis į VMI dėl prisijungimo suteikimo.
+            </div>
+          </li>
+
+          <li class="faq-item">
+            <div class="faq-q" role="button" tabindex="0" aria-expanded="false">
+              Koks yra GPM tarifas individualia veikla besiverčiantiems gyventojams?
+              <span class="faq-arrow" aria-hidden="true">▼</span>
+            </div>
+            <div class="faq-a">
+              Standartinis GPM tarifas individualia veikla gaunamoms pajamoms yra <strong>15 %</strong>. Tam tikroms veikloms galimas <strong>fiksuoto dydžio GPM</strong> režimas – mokama iš anksto nustatyta metinė suma, priklausomai nuo veiklos vietos ir rūšies. Dėl konkretaus tarifo rekomenduojame konsultuotis su mokesčių specialistu arba VMI.
+            </div>
+          </li>
+
+          <li class="faq-item">
+            <div class="faq-q" role="button" tabindex="0" aria-expanded="false">
+              Ar galima dirbti pagal darbo sutartį ir tuo pačiu turėti individualią veiklą?
+              <span class="faq-arrow" aria-hidden="true">▼</span>
+            </div>
+            <div class="faq-a">
+              Taip. Tai yra visiškai legalu. Tačiau turėkite omenyje, kad metinėje GPM deklaracijoje reikės deklaruoti <strong>abi pajamų rūšis</strong> (iš darbo sutarties ir iš individualios veiklos). GPM tarifas gali skirtis priklausomai nuo bendros metinės pajamų sumos.
+            </div>
+          </li>
+
+          <li class="faq-item">
+            <div class="faq-q" role="button" tabindex="0" aria-expanded="false">
+              Ką daryti, jei padariau klaidą deklaracijoje?
+              <span class="faq-arrow" aria-hidden="true">▼</span>
+            </div>
+            <div class="faq-a">
+              Deklaracijas galima <strong>koreguoti</strong> pateikiant patikslintą (koreguotą) deklaraciją per Mano VMI portalą. Rekomenduojama tai daryti kuo greičiau, nes savanoriškas klaidų ištaisymas iki VMI patikrinimo pradžios <strong>sumažina galimas sankcijas</strong>. Jei kyla abejonių – kreipkitės į konsultantą.
+            </div>
+          </li>
+
+          <li class="faq-item">
+            <div class="faq-q" role="button" tabindex="0" aria-expanded="false">
+              Ar nuomos pajamos apmokestinamos GPM?
+              <span class="faq-arrow" aria-hidden="true">▼</span>
+            </div>
+            <div class="faq-a">
+              Taip. Gyventojų pajamos, gautos iš turto nuomos, apmokestinamos <strong>GPM 15 %</strong> tarifu. Jas reikia deklaruoti metinėje GPM311 deklaracijoje. Jei nuomos pajamų per metus gaunate daugiau nei nustatyta riba – gali kilti prievolė registruotis PVM mokėtoju (šiuo atveju rekomenduojama konsultuotis individualiai).
+            </div>
+          </li>
+
+        </ul>
+      </div>
+    </section>
+
+    <!-- ===== KONTAKTAI ===== -->
+    <section id="kontaktai" aria-labelledby="kontaktai-heading">
+      <div class="container">
+        <h2 id="kontaktai-heading" style="border-left: 5px solid var(--clr-accent); padding-left: 16px;">Susisiekite su mumis</h2>
+        <p style="color:rgba(255,255,255,.8); margin-bottom:8px;">Turite klausimų apie deklaravimą, PVM ar individualią veiklą? Mes pasiruošę padėti.</p>
+
+        <div class="contacts-grid">
+          <address class="contact-card" style="font-style:normal;">
+            <div class="c-icon">🏢</div>
+            <h3>Įmonė</h3>
+            <p><strong style="color:#fff;">VMINAV UAB</strong></p>
+            <p>Įmonės kodas: <strong style="color:#fff;">301843857</strong></p>
+            <p>PVM kodas: LT100004363416</p>
+          </address>
+
+          <address class="contact-card" style="font-style:normal;">
+            <div class="c-icon">📍</div>
+            <h3>Adresas</h3>
+            <p>Justiniškių g. 59-2</p>
+            <p>LT-05100 Vilnius</p>
+            <p>Lietuva</p>
+          </address>
+
+          <div class="contact-card">
+            <div class="c-icon">📧</div>
+            <h3>El. paštas</h3>
+            <p><a href="/cdn-cgi/l/email-protection#c6afa8a0a986b0abafa8a7b0e8aab2"><span class="__cf_email__" data-cfemail="e881868e87a89e858186899ec6849c">[email&#160;protected]</span></a></p>
+          </div>
+
+          <div class="contact-card">
+            <div class="c-icon">📞</div>
+            <h3>Telefonas</h3>
+            <p><a href="tel:+37065082090">+370 650 82090</a></p>
+            <p style="font-size:.82rem; opacity:.7;">I–V: 9:00–18:00</p>
+          </div>
+        </div>
+
+        <div style="margin-top:36px; background:rgba(255,255,255,.07); border-radius:10px; padding:24px; border:1px solid rgba(255,255,255,.12);">
+          <h3 style="color:var(--clr-accent);">📝 Atsiųskite užklausą</h3>
+          <p style="color:rgba(255,255,255,.78); font-size:.92rem; margin-top:8px;">Jei norite gauti individualią konsultaciją – atsiųskite el. laišką su klausimo aprašymu į <a href="/cdn-cgi/l/email-protection#244d4a424b6452494d4a45520a4850" style="color:var(--clr-accent);"><span class="__cf_email__" data-cfemail="8ee7e0e8e1cef8e3e7e0eff8a0e2fa">[email&#160;protected]</span></a>. Atsakome per 1–2 darbo dienas.</p>
+        </div>
+
+        <p style="color:rgba(255,255,255,.45); font-size:.8rem; margin-top:28px;">
+          ⚠️ Primename: VMINAV UAB nėra VMI dalis ar jos įgaliotas atstovas. Oficialūs VMI kontaktai: tel. +370 5 260 5060, svetainė <a href="https://www.vmi.lt" target="_blank" rel="noopener noreferrer" style="color:rgba(255,255,255,.6);">vmi.lt</a>.
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer role="contentinfo">
+    <div class="container">
+      <p>
+        <strong style="color:#fff;">VMINAV UAB</strong> &nbsp;|&nbsp;
+        <span onclick="navTo('apie')" role="button" tabindex="0" style="cursor:pointer;">Apie mus</span> &nbsp;|&nbsp;
+        <span onclick="navTo('deklaracija')" role="button" tabindex="0" style="cursor:pointer;">Deklaracija</span> &nbsp;|&nbsp;
+        <span onclick="navTo('pvm')" role="button" tabindex="0" style="cursor:pointer;">PVM</span> &nbsp;|&nbsp;
+        <span onclick="navTo('iv')" role="button" tabindex="0" style="cursor:pointer;">Individuali veikla</span> &nbsp;|&nbsp;
+        <span onclick="navTo('terminai')" role="button" tabindex="0" style="cursor:pointer;">Terminai</span> &nbsp;|&nbsp;
+        <span onclick="navTo('kontaktai')" role="button" tabindex="0" style="cursor:pointer;">Kontaktai</span>
+      </p>
+      <p class="footer-disclaimer">
+        VMINAV UAB yra nepriklausomas privatus mokesčių informacijos ir konsultacijų portalas. Ši svetainė nėra oficialus Valstybinės mokesčių inspekcijos (VMI) prie LR Finansų ministerijos tinklalapis ir nėra su VMI susijusi jokiais oficialiais ryšiais. Pateikiama informacija yra tik edukacinė ir orientacinė – ji negali pakeisti oficialios VMI konsultacijos ar kvalifikuoto mokesčių specialisto patarimo. Informacija gali neatspindėti naujausių teisės aktų pakeitimų – visada tikrinkite aktualią informaciją vmi.lt. VMINAV UAB neatsako už sprendimus, priimtus remiantis šiame portale pateikta informacija.
+      </p>
+      <p>&copy; <span id="yr"></span> VMINAV UAB. Visos teisės saugomos.</p>
     </div>
-    <div class="footer-col">
-      <h4>Navigacija</h4>
-      <a href="#home">Pradžia</a>
-      <a href="#funkcijos">VMI funkcijos</a>
-      <a href="#eds">EDS portalas</a>
-      <a href="#mokesciai">Mokesčiai</a>
-      <a href="#faq">Klausimai</a>
-    </div>
-    <div class="footer-col">
-      <h4>Informacija</h4>
-      <a href="#apie">Apie mus</a>
-      <a href="#privatumas">Privatumas</a>
-      <a href="#kontaktai">Kontaktai</a>
-      <a href="https://www.vmi.lt" target="_blank" rel="noopener">Oficiali VMI ↗</a>
-      <a href="https://www.eds.vmi.lt" target="_blank" rel="noopener">EDS portalas ↗</a>
-    </div>
-  </div>
-  <div class="footer-bottom">
-    <span>© 2025 VMI Kompasas · Visos teisės saugomos</span>
-    <span>Dariaus ir Girėno g. 6, Vilnius · <a href="mailto:info@vmikompasas.com">info@vmikompasas.com</a></span>
-  </div>
-</footer>
+  </footer>
+
+</div><!-- /.page-wrap -->
+
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+    // Metai footer
+    document.getElementById('yr').textContent = new Date().getFullYear();
+
+    // ── Smooth scroll inside .page-wrap (iframe-safe) ────────────────
+    function navTo(id) {
+      var el = document.getElementById(id);
+      var wrap = document.querySelector('.page-wrap');
+      if (!el || !wrap) return;
+      var offsetTop = el.getBoundingClientRect().top - wrap.getBoundingClientRect().top + wrap.scrollTop;
+      wrap.scrollTo({ top: offsetTop, behavior: 'smooth' });
+      // close burger if open
+      var navEl = document.getElementById('main-nav');
+      var burgerEl = document.getElementById('burger');
+      if (navEl) { navEl.classList.remove('open'); }
+      if (burgerEl) { burgerEl.setAttribute('aria-expanded', 'false'); }
+    }
+
+    // Burger menu
+    var burger = document.getElementById('burger');
+    var navEl  = document.getElementById('main-nav');
+    burger.addEventListener('click', function () {
+      var open = navEl.classList.toggle('open');
+      burger.setAttribute('aria-expanded', open);
+    });
+
+    // Keyboard Enter/Space support for all span[role="button"]
+    document.querySelectorAll('span[role="button"]').forEach(function(el) {
+      el.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          el.click();
+        }
+      });
+    });
+
+    // FAQ accordion
+    document.querySelectorAll('.faq-item').forEach(function(item) {
+      var btn = item.querySelector('.faq-q');
+      btn.addEventListener('click', function() {
+        var isOpen = item.classList.toggle('open');
+        btn.setAttribute('aria-expanded', isOpen);
+      });
+      btn.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); btn.click(); }
+      });
+    });
+  </script>
 
 </body>
 </html>
