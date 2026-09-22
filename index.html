@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="lt">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <title>VMINAV – Mokesčių konsultacijos ir informacija Lietuvoje | VMINAV UAB</title>
+  <meta name="description" content="VMINAV UAB – nepriklausomas mokesčių informacijos portalas. Sužinokite, kaip užpildyti deklaraciją, kas yra PVM, kaip registruotis individualiai veiklai ir kokie deklaravimo terminai Lietuvoje."/>
+  <meta name="keywords" content="VMI, mokesčiai, deklaracija, PVM, individuali veikla, GPM, mokesčių konsultacijos, Lietuva, VMINAV"/>
+  <meta name="author" content="VMINAV UAB"/>
+  <meta name="robots" content="index,follow"/>
+  <meta property="og:title" content="VMINAV – Mokesčių konsultacijos ir informacija Lietuvoje"/>
+  <meta property="og:description" content="Nepriklausomas mokesčių informacijos ir konsultacijų portalas. Deklaracijos, PVM, individuali veikla, terminai."/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:locale" content="lt_LT"/>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@graph":[{"@type":"ProfessionalService","name":"VMINAV UAB","legalName":"VMINAV UAB","identifier":"301843857","vatID":"LT100004363416","address":{"@type":"PostalAddress","streetAddress":"Justiniškių g. 59-2","postalCode":"LT-05100","addressLocality":"Vilnius","addressCountry":"LT"},"telephone":"+37065082090","email":"info@vminav.lt","description":"Nepriklausomas mokesčių informacijos ir konsultacijų portalas fiziniams ir juridiniams asmenims Lietuvoje.","inLanguage":"lt","serviceType":["Mokesčių konsultacijos","Buhalterinė informacija","PVM konsultacijos"],"areaServed":{"@type":"Country","name":"Lietuva"},"contactPoint":{"@type":"ContactPoint","telephone":"+37065082090","email":"info@vminav.lt","contactType":"customer support","availableLanguage":["Lithuanian","Russian","English"]}},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Kas yra PVM Lietuvoje?","acceptedAnswer":{"@type":"Answer","text":"PVM (Pridėtinės vertės mokestis) – tai netiesioginis mokestis, taikomas prekių ir paslaugų pirkimui-pardavimui. Standartinis PVM tarifas Lietuvoje yra 21%."}},{"@type":"Question","name":"Kada reikia pateikti metinę pajamų deklaraciją?","acceptedAnswer":{"@type":"Answer","text":"Metinė gyventojų pajamų mokesčio (GPM) deklaracija paprastai teikiama iki gegužės 1 d. už praėjusius metus per EDS sistemą adresu deklaravimas.vmi.lt."}},{"@type":"Question","name":"Kaip registruotis individualiai veiklai?","acceptedAnswer":{"@type":"Answer","text":"Individualią veiklą galima registruoti internetu per Mano VMI portalą arba tiesiogiai VMI teritoriniame skyriuje, pateikiant prašymą dėl individualios veiklos pažymos išdavimo."}}]}]}
+  </script>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+<div class="page-wrap">
+
+  <header role="banner">
+    <div class="nav-inner">
+      <span onclick="navTo('pradzia')" class="logo" role="button" tabindex="0" aria-label="VMINAV – pradžia" style="cursor:pointer;">VMI<span>NAV</span></span>
+      <button class="burger" id="burger" aria-label="Atidaryti meniu" aria-expanded="false" aria-controls="main-nav">
+        <span></span><span></span><span></span>
+      </button>
+      <nav aria-label="Pagrindinė navigacija">
+        <ul id="main-nav" role="list">
+          <li><span onclick="navTo('pradzia')" role="button" tabindex="0">Pradžia</span></li>
+          <li><span onclick="navTo('apie')" role="button" tabindex="0">Apie mus</span></li>
+          <li><span onclick="navTo('deklaracija')" role="button" tabindex="0">Deklaracija</span></li>
+          <li><span onclick="navTo('pvm')" role="button" tabindex="0">PVM</span></li>
+          <li><span onclick="navTo('iv')" role="button" tabindex="0">Individuali veikla</span></li>
+          <li><span onclick="navTo('terminai')" role="button" tabindex="0">Terminai</span></li>
+          <li><span onclick="navTo('duk')" role="button" tabindex="0">D.U.K.</span></li>
+          <li><span onclick="navTo('kontaktai')" role="button" tabindex="0">Kontaktai</span></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+
+    <!-- HERO -->
+    <section id="pradzia" aria-labelledby="hero-heading">
+      <div class="container">
+        <span class="hero-badge">🇱🇹 Nepriklausomas mokesčių portalas</span>
+        <h1 id="hero-heading">Mokesčiai Lietuvoje –<br>paprastai ir aiškiai</h1>
+        <p>VMINAV – nepriklausomas informacinis ir konsultacinis portalas, skirtas padėti Lietuvos gyventojams bei verslo atstovams suprasti mokesčių sistemą, teisingai deklaruoti pajamas ir nepražiopsoti svarbių terminų.</p>
+        <div class="hero-cta">
+          <span onclick="navTo('deklaracija')" class="btn btn-primary" role="button" tabindex="0" style="cursor:pointer;">Kaip užpildyti deklaraciją →</span>
+          <span onclick="navTo('kontaktai')" class="btn btn-outline" role="button" tabindex="0" style="cursor:pointer;">Susisiekite su mumis</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- APIE MUS -->
+    <section id="apie" aria-labelledby="apie-heading">
+      <div class="container">
+        <div class="disclaimer-banner" role="note">
+          <strong>⚠️ Svarbu:</strong> VMINAV UAB yra <strong>nepriklausomas</strong> privatus konsultacinis portalas ir <strong>nėra oficiali</strong> Valstybinės mokesčių inspekcijos (VMI) svetainė ar jos padalinys. Oficiali VMI svetainė yra <a href="https://www.vmi.lt" target="_blank" rel="noopener noreferrer">vmi.lt</a>. Pateikiama informacija yra edukacinė ir gali keistis – visada patikrinkite aktualią informaciją VMI šaltiniuose.
+        </div>
+        <h2 id="apie-heading">Apie VMINAV UAB</h2>
+        <div class="about-cols">
+          <div>
+            <p>Esame mokesčių konsultantų komanda, padedanti fiziniams asmenims, individualia veikla besiverčiantiems gyventojams bei smulkaus verslo atstovams suvokti Lietuvos mokesčių sistemą.</p>
+            <p>Mūsų tikslas – pateikti suprantamą, aktualią ir praktiškai naudingą informaciją apie VMI tvarką, mokestines prievoles ir deklaravimo procedūras.</p>
+            <p>Mes <strong>neatstovaukime</strong> VMI ir nesame jos darbuotojai. Jei turite oficialių klausimų – kreipkitės tiesiogiai į <a href="https://www.vmi.lt" target="_blank" rel="noopener noreferrer">VMI</a>.</p>
+          </div>
+          <div>
+            <h3>Ką mes siūlome?</h3>
+            <ul class="check-list">
+              <li>Aiškus supažindinimas su mokesčių sistema</li>
+              <li>Nuoseklūs deklaravimo proceso paaiškinimai</li>
+              <li>Informacija apie PVM, GPM ir kitas mokesčių rūšis</li>
+              <li>Individualios veiklos registracijos gidas</li>
+              <li>Aktualių terminų kalendorius</li>
+              <li>Asmeninės konsultacijos (el. paštu ir telefonu)</li>
+            </ul>
+          </div>
+        </div>
+        <div class="cards">
+          <article class="card">
+            <div class="card-icon">📄</div>
+            <h3>Deklaravimas</h3>
+            <p>Žingsnis po žingsnio paaiškinsime, kaip užpildyti ir pateikti mokesčių deklaraciją per EDS.</p>
+            <span onclick="navTo('deklaracija')" class="card-link" role="button" tabindex="0" style="cursor:pointer;">Skaityti daugiau →</span>
+          </article>
+          <article class="card">
+            <div class="card-icon">💰</div>
+            <h3>PVM (pridėtinės vertės mokestis)</h3>
+            <p>Kas yra PVM, kada reikia registruotis PVM mokėtoju ir kaip skaičiuoti mokestį.</p>
+            <span onclick="navTo('pvm')" class="card-link" role="button" tabindex="0" style="cursor:pointer;">Skaityti daugiau →</span>
+          </article>
+          <article class="card">
+            <div class="card-icon">🧾</div>
+            <h3>Individuali veikla</h3>
+            <p>Kaip registruotis, kokie mokesčiai taikomi ir ką reikia žinoti apie individualią veiklą.</p>
+            <span onclick="navTo('iv')" class="card-link" role="button" tabindex="0" style="cursor:pointer;">Skaityti daugiau →</span>
+          </article>
+          <article class="card">
+            <div class="card-icon">📅</div>
+            <h3>Mokesčių terminai</h3>
+            <p>Visų svarbių deklaravimo ir mokėjimo terminų apžvalga – kad niekas neprailgtų.</p>
+            <span onclick="navTo('terminai')" class="card-link" role="button" tabindex="0" style="cursor:pointer;">Skaityti daugiau →</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- DEKLARACIJA -->
+    <section id="deklaracija" aria-labelledby="deklaracija-heading">
+      <div class="container">
+        <article class="article-block">
+          <h2 id="deklaracija-heading">Kaip užpildyti mokesčių deklaraciją</h2>
+          <p>Metinė gyventojų pajamų mokesčio (GPM) deklaracija (forma <strong>GPM311</strong>) teikiama kiekvienais metais už praėjusius metus. Ji privalo būti pateikta iki <strong>gegužės 1 d.</strong> Šis procesas vykdomas per VMI elektroninę sistemą.</p>
+          <div class="info-box"><span class="icon">ℹ️</span> Deklaraciją galima pateikti internetu, prisijungus per Mano VMI portalą adresu <strong>deklaravimas.vmi.lt</strong>, naudojant el. bankininkystę, el. parašą arba „Smart-ID".</div>
+          <h3>Žingsnis po žingsnio: kaip pateikti GPM deklaraciją</h3>
+          <ol class="steps">
+            <li>Prisijunkite prie <strong>Mano VMI</strong> portalo adresu <em>deklaravimas.vmi.lt</em> (per el. bankininkystę, Smart-ID arba el. parašą).</li>
+            <li>Pasirinkite skiltį <strong>„Deklaracijos"</strong> → <strong>„Teikti deklaraciją"</strong> → forma <strong>GPM311</strong>.</li>
+            <li>Sistema automatiškai užpildo didelę dalį duomenų (darbdavių ataskaitos, banko palūkanos ir kt.). Patikrinkite jų teisingumą.</li>
+            <li>Papildomai įveskite pajamas, kurių sistema neužpildė automatiškai: individualios veiklos, užsienio pajamos, nuomos pajamos ir kt.</li>
+            <li>Nurodykite <strong>leistinus atskaitymus</strong>: gyvybės draudimas, pensijų kaupimas (3 pakopa), studijų išlaidos, palūkanos už būsto paskolą.</li>
+            <li>Patikrinkite apskaičiuotą <strong>GPM permokos arba priemokos</strong> sumą. Jei yra permoka – nurodykite banko sąskaitą grąžinimui.</li>
+            <li>Pasirašykite ir pateikite deklaraciją. Gausite patvirtinimą el. paštu arba sistemoje.</li>
+          </ol>
+          <h3>Kas privalo teikti metinę deklaraciją?</h3>
+          <ul>
+            <li>Asmenys, kurių pajamos viršija neapmokestinamąjį minimumą (NPD riba).</li>
+            <li>Gyventojai, gavę pajamų iš kelių šaltinių (keli darbdaviai, nuoma, individuali veikla).</li>
+            <li>Asmenys, norintys susigrąžinti GPM permoką (pvz., dėl draudimo ar pensijų kaupimo atskaitymų).</li>
+            <li>Individualios veiklos vykdytojai (IV).</li>
+            <li>Asmenys, gavę pajamų iš užsienio.</li>
+          </ul>
+          <h3>Kokių klaidų vengti?</h3>
+          <ul>
+            <li><strong>Nepamiršti nurodyti visų pajamų šaltinių</strong> – nuomos, palūkanų, pardavimo pajamų.</li>
+            <li><strong>Nepamirškite atskaitymų</strong> – daugelis gyventojų nepasitelkia visų jiems priklausančių NPD ir kitų atskaitymų.</li>
+            <li><strong>Patikrinkite automatiškai užpildytus duomenis</strong> – kartais informacija būna netiksli arba nepilna.</li>
+            <li><strong>Venkite vėlavimo</strong> – pavėluotas deklaracijos pateikimas gali užtraukti baudą.</li>
+          </ul>
+          <div class="info-box"><span class="icon">💡</span> <strong>Patarimas:</strong> Jei nežinote, ar privalote teikti deklaraciją, pasinaudokite VMI elektroniniu aptarnavimu arba kreipkitės į mus konsultacijai.</div>
+        </article>
+      </div>
+    </section>
+
+    <!-- PVM -->
+    <section id="pvm" aria-labelledby="pvm-heading">
+      <div class="container">
+        <article class="article-block">
+          <h2 id="pvm-heading">Kas yra PVM (Pridėtinės vertės mokestis)?</h2>
+          <p><strong>PVM</strong> – tai pridėtinės vertės mokestis (angl. <em>VAT – Value Added Tax</em>), taikomas prekių tiekimui, paslaugų teikimui ir importui Lietuvoje. Tai yra <em>netiesioginis</em> mokestis – jį faktiškai moka galutinis vartotojas, o verslo subjektai yra tarpininkai, renkantys PVM valstybei.</p>
+          <h3>PVM tarifai Lietuvoje</h3>
+          <div class="tbl-wrap">
+            <table>
+              <caption style="text-align:left;font-weight:700;margin-bottom:10px;font-size:.95rem;">Galiojantys PVM tarifai (nuolat tikrinkite aktualumą VMI)</caption>
+              <thead><tr><th>Tarifas</th><th>Taikoma</th><th>Pavyzdžiai</th></tr></thead>
+              <tbody>
+                <tr><td><strong>21 %</strong></td><td>Standartinis tarifas – dauguma prekių ir paslaugų</td><td>Elektronika, drabužiai, restoranų paslaugos</td></tr>
+                <tr><td><strong>9 %</strong></td><td>Lengvatinis tarifas</td><td>Šildymas, kai kurios maisto prekės, knygos, vaistai, viešbučiai</td></tr>
+                <tr><td><strong>5 %</strong></td><td>Specialus lengvatinis tarifas</td><td>Tam tikri vaistai ir medicinos prekės (pagal VMI sąrašą)</td></tr>
+                <tr><td><strong>0 %</strong></td><td>Eksportas, ES vidaus tiekimas, tam tikros finansų paslaugos</td><td>Prekių eksportas, ES tiekimas PVM mokėtojams</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <h3>Kada privaloma registruotis PVM mokėtoju?</h3>
+          <p>Asmuo ar įmonė <strong>privalo</strong> registruotis PVM mokėtoju VMI, kai per 12 mėnesių iš veiklos gaunamų pajamų suma viršija <strong>45 000 EUR</strong>. Pasiekus šią ribą, reikia kreiptis į VMI ne vėliau kaip per 5 darbo dienas.</p>
+          <ul>
+            <li><strong>Savanoriškas registravimas</strong> – galimas ir nepasiekus 45 000 EUR ribos, jei tai naudinga verslui.</li>
+            <li><strong>Registracija</strong> atliekama per Mano VMI portalą arba VMI skyriuje.</li>
+          </ul>
+          <h3>Kaip veikia PVM?</h3>
+          <ol class="steps">
+            <li><strong>Perkate prekes/paslaugas</strong> – mokate PVM tiekėjui (tai jūsų <em>pirkimo PVM</em>).</li>
+            <li><strong>Parduodate prekes/paslaugas</strong> – skaičiuojate PVM pirkėjui (tai jūsų <em>pardavimo PVM</em>).</li>
+            <li><strong>Skirtumo mokėjimas:</strong> jei pardavimo PVM didesnis – mokate skirtumą VMI. Jei mažesnis – VMI grąžina permokėtą sumą.</li>
+          </ol>
+          <h3>PVM deklaracijos pateikimo terminai</h3>
+          <ul>
+            <li><strong>Mėnesinė deklaracija</strong> (forma FR0600) – teikiama iki kito mėnesio <strong>25 dienos</strong>.</li>
+            <li><strong>Ketvirčio deklaracija</strong> – teikiama iki pirmojo mėnesio po ketvirčio <strong>25 dienos</strong>.</li>
+            <li>Deklaracija teikiama per <strong>EDS sistemą</strong> (deklaravimas.vmi.lt).</li>
+          </ul>
+          <div class="info-box"><span class="icon">⚠️</span> Pasikeitimai mokesčių įstatymuose gali įtakoti tarifus ir ribas. Visada tikrinkite naujausius duomenis oficialioje <a href="https://www.vmi.lt" target="_blank" rel="noopener noreferrer">VMI svetainėje</a>.</div>
+        </article>
+      </div>
+    </section>
+
+    <!-- INDIVIDUALI VEIKLA -->
+    <section id="iv" aria-labelledby="iv-heading">
+      <div class="container">
+        <article class="article-block">
+          <h2 id="iv-heading">Kaip registruotis individualiai veiklai (IV)?</h2>
+          <p><strong>Individuali veikla</strong> – tai vienas paprasčiausių būdų pradėti savarankišką darbą Lietuvoje. Ji tinkama laisvai samdomiems specialistams (freelanceriams), smulkaus verslo atstovams, turintiems papildomą pajamų šaltinį.</p>
+          <h3>Individuali veikla – privalumai ir apribojimai</h3>
+          <div class="cards" style="margin-top:16px;">
+            <div class="card" style="border-top-color:#2ecc71;">
+              <h3 style="color:#27ae60;">✅ Privalumai</h3>
+              <ul style="font-size:.9rem;color:var(--clr-muted);">
+                <li>Paprastas ir greitas registravimas</li>
+                <li>Nereikia steigti įmonės</li>
+                <li>Galimybė naudotis fiksuoto GPM režimu</li>
+                <li>Galimybė išskaičiuoti verslo išlaidas</li>
+              </ul>
+            </div>
+            <div class="card" style="border-top-color:#e74c3c;">
+              <h3 style="color:#c0392b;">⚠️ Apribojimai</h3>
+              <ul style="font-size:.9rem;color:var(--clr-muted);">
+                <li>Asmeninė atsakomybė visu turtu</li>
+                <li>Ribotos socialinės garantijos</li>
+                <li>Sunkiau pritraukti investuotojus</li>
+                <li>Ne visos veiklos rūšys leidžiamos IV forma</li>
+              </ul>
+            </div>
+          </div>
+          <h3 style="margin-top:28px;">Registracijos žingsniai</h3>
+          <ol class="steps">
+            <li>Prisijunkite prie <strong>Mano VMI</strong> portalo (manoeidas.vmi.lt arba deklaravimas.vmi.lt).</li>
+            <li>Pasirinkite <strong>„Prašymai"</strong> → <strong>„Individualios veiklos registravimas"</strong>.</li>
+            <li>Nurodykite veiklos rūšis pagal <strong>EVRK 2 red.</strong> Galima registruoti kelias veiklos rūšis.</li>
+            <li>Pasirinkite <strong>mokesčių režimą</strong>: standartinį arba fiksuoto dydžio GPM.</li>
+            <li>Pateikite prašymą. Pažyma išduodama iš karto elektroniniu būdu.</li>
+          </ol>
+          <h3>Mokesčiai individualiai veiklai</h3>
+          <div class="tbl-wrap">
+            <table>
+              <thead><tr><th>Mokestis</th><th>Tarifas</th><th>Pastabos</th></tr></thead>
+              <tbody>
+                <tr><td><strong>GPM (pajamų mokestis)</strong></td><td>15 %</td><td>Nuo veiklos pajamų minus leistini atskaitymai</td></tr>
+                <tr><td><strong>Fiksuoto dydžio GPM</strong></td><td>~5 % (sąlyginai)</td><td>Specialus režimas tam tikroms veikloms; mokamas fiksuotas mokestis</td></tr>
+                <tr><td><strong>VSD (socialinis draudimas)</strong></td><td>12,52 %</td><td>Nuo veiklos pajamų; gali keistis – tikrinkite VMI</td></tr>
+                <tr><td><strong>PSD (sveikatos draudimas)</strong></td><td>9 %</td><td>Nuo veiklos pajamų; privaloma mokėti</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="info-box" style="margin-top:24px;"><span class="icon">💡</span> Leidžiami atskaitymai: galima išskaičiuoti su veikla susijusias išlaidas (kompiuterio įsigijimas, biuro nuoma, komunikacijos išlaidos ir kt.).</div>
+          <h3>Svarbu žinoti</h3>
+          <ul>
+            <li>Veiklos pajamos deklaruojamos metinėje <strong>GPM311</strong> deklaracijoje iki gegužės 1 d.</li>
+            <li>Jei metinės pajamos viršija <strong>45 000 EUR</strong> – privaloma registruotis PVM mokėtoju.</li>
+            <li>Individualios veiklos vykdytojas <strong>neturi atskiro juridinio asmens statuso</strong> – jis atsako visu asmenine turtu.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- TERMINAI -->
+    <section id="terminai" aria-labelledby="terminai-heading">
+      <div class="container">
+        <article class="article-block">
+          <h2 id="terminai-heading">Mokesčių deklaravimo ir mokėjimo terminai</h2>
+          <p>Žemiau pateikiami dažniausiai aktualūs terminai. Atkreipkite dėmesį, kad terminai gali būti keičiami VMI ar Seimo sprendimais – visada papildomai tikrinkite aktualumą <a href="https://www.vmi.lt" target="_blank" rel="noopener noreferrer">vmi.lt</a>.</p>
+          <div class="tbl-wrap">
+            <table>
+              <thead><tr><th>Terminas</th><th>Dokumentas / Mokestis</th><th>Kas teikia</th><th>Pastabos</th></tr></thead>
+              <tbody>
+                <tr><td><strong>Iki gegužės 1 d.</strong></td><td>Metinė GPM deklaracija (GPM311)</td><td>Fiziniai asmenys, IV</td><td>Už praėjusius metus</td></tr>
+                <tr><td><strong>Iki mėnesio 25 d.</strong></td><td>PVM deklaracija (FR0600) – mėnesinė</td><td>PVM mokėtojai (mėnesiniai)</td><td>Už praėjusį mėnesį</td></tr>
+                <tr><td><strong>Iki ketvirčio paskutinio mėn. 25 d.</strong></td><td>PVM deklaracija (FR0600) – ketvirčio</td><td>PVM mokėtojai (ketvirčio)</td><td>Už praėjusį ketvirtį</td></tr>
+                <tr><td><strong>Kiekvieną mėnesį iki 15 d.</strong></td><td>Darbdavio pranešimas (SAV ataskaita)</td><td>Darbdaviai</td><td>Darbo užmokesčio ataskaita</td></tr>
+                <tr><td><strong>Iki spalio 1 d.</strong></td><td>Pelno mokesčio avansiniai mokėjimai</td><td>Juridiniai asmenys</td><td>Metų vidurio avanso mokėjimas</td></tr>
+                <tr><td><strong>Iki birželio 15 d.</strong></td><td>Pelno mokesčio deklaracija (PLN204)</td><td>UAB, MB ir kt. juridiniai asmenys</td><td>Už praėjusius metus</td></tr>
+                <tr><td><strong>Iki vasario 1 d.</strong></td><td>Nekilnojamojo turto mokesčio deklaracija</td><td>Juridiniai asmenys, IV</td><td>Už turėtą NT</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="info-box" style="margin-top:24px;"><span class="icon">📅</span> Jei terminas patenka į poilsio ar šventinę dieną, deklaracija paprastai teikiama kitą darbo dieną. Tikslią informaciją rasite <a href="https://www.vmi.lt" target="_blank" rel="noopener noreferrer">vmi.lt</a>.</div>
+          <h3>Baudos už pavėluotą pateikimą</h3>
+          <ul>
+            <li>Pavėluotas deklaracijos pateikimas gali užtraukti administracinę baudą.</li>
+            <li>Papildomai gali būti skaičiuojamos <strong>delspinigiai</strong> nuo nesumokėtų mokesčių.</li>
+            <li>Savanoriškas klaidų ištaisymas prieš VMI patikrinimą gali sumažinti sankcijas.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- DUK -->
+    <section id="duk" aria-labelledby="duk-heading">
+      <div class="container">
+        <h2 id="duk-heading">Dažniausiai užduodami klausimai (D.U.K.)</h2>
+        <ul class="faq-list" role="list">
+          <li class="faq-item">
+            <div class="faq-q" role="button" tabindex="0" aria-expanded="false">Ar privalau teikti metinę deklaraciją, jei dirbu pagal darbo sutartį?<span class="faq-arrow" aria-hidden="true">▼</span></div>
+            <div class="faq-a">Dažniausiai darbdavys išskaičiuoja GPM ir pateikia VMI reikiamas ataskaitas. Tačiau jei turėjote <strong>kelis darbdavius</strong>, gautas <strong>papildomų pajamų</strong> (nuoma, individuali veikla, dividendai) arba norite <strong>susigrąžinti permoką</strong> – deklaraciją teikti verta arba net privaloma.</div>
+          </li>
+          <li class="faq-item">
+            <div class="faq-q" role="button" tabindex="0" aria-expanded="false">Kaip prisijungti prie Mano VMI portalo?<span class="faq-arrow" aria-hidden="true">▼</span></div>
+            <div class="faq-a">Galite prisijungti per <strong>el. bankininkystę</strong> (SEB, Swedbank, Luminor ir kt.), <strong>Smart-ID</strong>, <strong>mobilųjį parašą</strong> arba <strong>kvalifikuotą el. parašą</strong>. Portalas pasiekiamas adresu <em>deklaravimas.vmi.lt</em>.</div>
+          </li>
+          <li class="faq-item">
+            <div class="faq-q" role="button" tabindex="0" aria-expanded="false">Koks yra GPM tarifas individualia veikla besiverčiantiems gyventojams?<span class="faq-arrow" aria-hidden="true">▼</span></div>
+            <div class="faq-a">Standartinis GPM tarifas individualia veikla gaunamoms pajamoms yra <strong>15 %</strong>. Tam tikroms veikloms galimas <strong>fiksuoto dydžio GPM</strong> režimas – mokama iš anksto nustatyta metinė suma.</div>
+          </li>
+          <li class="faq-item">
+            <div class="faq-q" role="button" tabindex="0" aria-expanded="false">Ar galima dirbti pagal darbo sutartį ir tuo pačiu turėti individualią veiklą?<span class="faq-arrow" aria-hidden="true">▼</span></div>
+            <div class="faq-a">Taip. Tai yra visiškai legalu. Tačiau metinėje GPM deklaracijoje reikės deklaruoti <strong>abi pajamų rūšis</strong>.</div>
+          </li>
+          <li class="faq-item">
+            <div class="faq-q" role="button" tabindex="0" aria-expanded="false">Ką daryti, jei padariau klaidą deklaracijoje?<span class="faq-arrow" aria-hidden="true">▼</span></div>
+            <div class="faq-a">Deklaracijas galima <strong>koreguoti</strong> pateikiant patikslintą deklaraciją per Mano VMI portalą. Savanoriškas klaidų ištaisymas iki VMI patikrinimo <strong>sumažina galimas sankcijas</strong>.</div>
+          </li>
+          <li class="faq-item">
+            <div class="faq-q" role="button" tabindex="0" aria-expanded="false">Ar nuomos pajamos apmokestinamos GPM?<span class="faq-arrow" aria-hidden="true">▼</span></div>
+            <div class="faq-a">Taip. Gyventojų pajamos iš turto nuomos apmokestinamos <strong>GPM 15 %</strong> tarifu. Jas reikia deklaruoti metinėje GPM311 deklaracijoje.</div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- KONTAKTAI -->
+    <section id="kontaktai" aria-labelledby="kontaktai-heading">
+      <div class="container">
+        <h2 id="kontaktai-heading" style="border-left:5px solid var(--clr-accent);padding-left:16px;">Susisiekite su mumis</h2>
+        <p style="color:rgba(255,255,255,.8);margin-bottom:8px;">Turite klausimų apie deklaravimą, PVM ar individualią veiklą? Mes pasiruošę padėti.</p>
+        <div class="contacts-grid">
+          <address class="contact-card" style="font-style:normal;">
+            <div class="c-icon">🏢</div>
+            <h3>Įmonė</h3>
+            <p><strong style="color:#fff;">VMINAV UAB</strong></p>
+            <p>Įmonės kodas: <strong style="color:#fff;">301843857</strong></p>
+            <p>PVM kodas: LT100004363416</p>
+          </address>
+          <address class="contact-card" style="font-style:normal;">
+            <div class="c-icon">📍</div>
+            <h3>Adresas</h3>
+            <p>Justiniškių g. 59-2</p>
+            <p>LT-05100 Vilnius</p>
+            <p>Lietuva</p>
+          </address>
+          <div class="contact-card">
+            <div class="c-icon">📧</div>
+            <h3>El. paštas</h3>
+            <p><span class="email-reveal" data-u="info" data-d="vminav.lt"></span></p>
+          </div>
+          <div class="contact-card">
+            <div class="c-icon">📞</div>
+            <h3>Telefonas</h3>
+            <p><a href="tel:+37065082090">+370 650 82090</a></p>
+            <p style="font-size:.82rem;opacity:.7;">I–V: 9:00–18:00</p>
+          </div>
+        </div>
+        <div style="margin-top:36px;background:rgba(255,255,255,.07);border-radius:10px;padding:24px;border:1px solid rgba(255,255,255,.12);">
+          <h3 style="color:var(--clr-accent);">📝 Atsiųskite užklausą</h3>
+          <p style="color:rgba(255,255,255,.78);font-size:.92rem;margin-top:8px;">Jei norite gauti individualią konsultaciją – atsiųskite el. laišką su klausimo aprašymu į <span class="email-reveal" data-u="info" data-d="vminav.lt" data-color="var(--clr-accent)"></span>. Atsakome per 1–2 darbo dienas.</p>
+        </div>
+        <p style="color:rgba(255,255,255,.45);font-size:.8rem;margin-top:28px;">⚠️ Primename: VMINAV UAB nėra VMI dalis ar jos įgaliotas atstovas. Oficialūs VMI kontaktai: tel. +370 5 260 5060, svetainė <a href="https://www.vmi.lt" target="_blank" rel="noopener noreferrer" style="color:rgba(255,255,255,.6);">vmi.lt</a>.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer role="contentinfo">
+    <div class="container">
+      <p>
+        <strong style="color:#fff;">VMINAV UAB</strong> &nbsp;|&nbsp;
+        <span onclick="navTo('apie')" role="button" tabindex="0">Apie mus</span> &nbsp;|&nbsp;
+        <span onclick="navTo('deklaracija')" role="button" tabindex="0">Deklaracija</span> &nbsp;|&nbsp;
+        <span onclick="navTo('pvm')" role="button" tabindex="0">PVM</span> &nbsp;|&nbsp;
+        <span onclick="navTo('iv')" role="button" tabindex="0">Individuali veikla</span> &nbsp;|&nbsp;
+        <span onclick="navTo('terminai')" role="button" tabindex="0">Terminai</span> &nbsp;|&nbsp;
+        <span onclick="navTo('kontaktai')" role="button" tabindex="0">Kontaktai</span>
+      </p>
+      <p class="footer-disclaimer">VMINAV UAB yra nepriklausomas privatus mokesčių informacijos ir konsultacijų portalas. Ši svetainė nėra oficialus Valstybinės mokesčių inspekcijos (VMI) prie LR Finansų ministerijos tinklalapis ir nėra su VMI susijusi jokiais oficialiais ryšiais. Pateikiama informacija yra tik edukacinė ir orientacinė – ji negali pakeisti oficialios VMI konsultacijos ar kvalifikuoto mokesčių specialisto patarimo. Informacija gali neatspindėti naujausių teisės aktų pakeitimų – visada tikrinkite aktualią informaciją vmi.lt. VMINAV UAB neatsako už sprendimus, priimtus remiantis šiame portale pateikta informacija.</p>
+      <p>&copy; <span id="yr"></span> VMINAV UAB. Visos teisės saugomos.</p>
+    </div>
+  </footer>
+
+</div><!-- /.page-wrap -->
+<script src="main.js" defer></script>
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/v31edd6df95cf4e85bb4c19e7a9bdbcba1788362987495" integrity="sha512-iIg7k2xntmwu6/uSb5tpc/hySgZc4eoL31yB29W6tJFo2akwjPWcEqnCEdJvGexCL0KEQwVYv5BlowfhVz26hg==" data-cf-beacon='{"version":"2024.11.0","token":"f0f03d0605bf45f1a3b17cf7d5e6861f","spa":2}' crossorigin="anonymous"></script>
+</body>
+</html>
