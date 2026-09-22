@@ -63,15 +63,15 @@
   var calcBtn = document.getElementById('calc-btn');
   if(calcBtn){
     calcBtn.addEventListener('click', function(){
-      var income   = parseFloat(document.getElementById('calc-income').value)   || 0;
-      var expenses = parseFloat(document.getElementById('calc-expenses').value) || 0;
+      var income   = parseFloat(document.getElementById('calc-income').value.replace(/\s/g,'').replace(',','.'))   || 0;
+      var expenses = parseFloat(document.getElementById('calc-expenses').value.replace(/\s/g,'').replace(',','.')) || 0;
       if(income <= 0){ alert('Įveskite pajamų sumą.'); return; }
       var base   = Math.max(0, income - expenses);
       var gpm    = base * 0.15;
       var vsd    = base * 0.1252;
       var psd    = base * 0.09;
       var total  = gpm + vsd + psd;
-      var net    = income - total;
+      var net    = base - total;
       var fmt = function(n){ return n.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g,',') + ' €'; };
       var rows = [
         ['Metinės pajamos',            fmt(income),   ''],
